@@ -1,3 +1,4 @@
+
 let divCont = document.getElementById("cont");
 
 function addStyles() {
@@ -252,21 +253,29 @@ async function loadGroups(tier){
     })
 }
 
-async function loadPlayers(tier) {
-    let playerList = await fetch(`/api/players/${tier}`)
+let tierSelector = document.getElementById("tier-selector");
+
+async function loadPlayers() {
+    let params = new URLSearchParams(document.location.search);
+    let t = params.get("t") || 1;
+    tierSelector.value = t;
+    let playerList = await fetch(`/api/players/${t}`)
     playerList = await playerList.json();
     // console.log(playerList);
-    await loadGroups(tier);
+    await loadGroups(t);
     loadLeftBar(playerList);
-    loadSeedingGroups(playerList,tier);
+    loadSeedingGroups(playerList,t);
 }
 
-async function updateGroups(tier){
-    let playerList = await fetch(`/api/players/${tier}`)
+async function updateGroups(){
+    let params = new URLSearchParams(document.location.search);
+    let t = params.get("t");
+    tierSelector.value = t;
+    let playerList = await fetch(`/api/players/${t}`)
     playerList = await playerList.json();
-    await loadGroups(tier);
+    await loadGroups(t);
     loadLeftBar(playerList);
-    loadSeedingGroups(playerList,tier);
+    loadSeedingGroups(playerList,t);
     addStyles();
 }
 
@@ -274,6 +283,7 @@ loadPlayers(1).then(()=>{
     addStyles();
 })
 
-document.getElementById("tier-selector").addEventListener("change", (e)=>{
+tierSelector.addEventListener("change", (e)=>{
+    insertParam('t', e.target.value);
     updateGroups(e.target.value);
 })

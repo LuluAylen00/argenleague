@@ -6,3 +6,9 @@ function sliceIntoChunks(arr, chunkSize) {
     }
     return res;
 }
+
+function insertParam(key, value) {
+    const url = new URL(window.location.href);
+    url.searchParams.set(key, value);
+    window.history.replaceState(null, null, url); // or pushState
+}
