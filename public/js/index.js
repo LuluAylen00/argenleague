@@ -2,6 +2,8 @@
 let divCont = document.getElementById("cont");
 
 function addStyles() {
+    document.getElementById("seeding-groups-h3").style.margin = "2px 15px";
+
     let elements = [];
     let seeds = document.getElementById("inv").textContent.split(",");
 

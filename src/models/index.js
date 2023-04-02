@@ -16,8 +16,9 @@ const model = {
     findByTier: (tier) => {
         return data.filter(p => Math.ceil(p.prevData.seed / 16) == tier);
     },
-    findByGroup: (group) => {
-        return model.findAllGroups()[group] ? model.findAllGroups()[group] : []
+    findByGroup: (group,tier) => {
+        // console.log(`Grupo: ${group} tiene ${model.findAllGroups(tier)[group].length}`);
+        return model.findAllGroups(tier)[group]
     },
     findByPk: (id) => {
         return data.find(d => d.id == id);
@@ -26,11 +27,12 @@ const model = {
         // function validGroup(g) {
         //     return g == 1 ? g == 1 : g == 2 ? g == 2 : g == 3 ? g == 3 : g == 4 ? g == 4 : false;
         // }
+        let tier = Math.ceil(model.findByPk(playerId).prevData.seed / 16)
         if (group == null ? group == null : group == 1 ? group == 1 : group == 2 ? group == 2 : group == 3 ? group == 3 : group == 4 ? group == 4 : false) {
-            if (model.findByGroup(group).length == 4 && group != null) { // Grupo lleno
-                console.log(model.findByGroup(group));
+            // console.log(model.findByGroup(group,tier));
+            if (model.findByGroup(group,tier).length == 4 && group != null) { // Grupo lleno
                 return 500;
-            // } else if(model.findByGroup(group)) {
+            // } else if(model.findByGroup(group,tier)) {
 
             } else {
                 data = data.map(p => {
@@ -47,18 +49,15 @@ const model = {
         }
     },
     findAllGroups: function(tier) {
-        var groupBy = function(xs, key) {
-            return xs.reduce(function(rv, x) {
-              (rv[x[key]] = rv[x[key]] || []).push(x);
-              return rv;
-            }, {});
-        };
-        let result = groupBy(model.findByTier(tier), 'group');
-        result["1"] = result["1"] ? result["1"] : [];
-        result["2"] = result["2"] ? result["2"] : [];
-        result["3"] = result["3"] ? result["3"] : [];
-        result["4"] = result["4"] ? result["4"] : [];
-          
+        let data = model.findByTier(tier);
+        let result = {
+            '1': data.filter(r => r.group == 1) || [],
+            '2': data.filter(r => r.group == 2) || [],
+            '3': data.filter(r => r.group == 3) || [],
+            '4': data.filter(r => r.group == 4) || [],
+            'null': data.filter(r => r.group == null) || [],
+        }
+        // console.log(result);
         return result;
     }
 }
