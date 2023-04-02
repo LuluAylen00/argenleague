@@ -13,11 +13,15 @@ function addStyles() {
         // console.log(Object.values(elements));
         Object.values(elements).forEach((activador) => {
             console.log();
+            let tableInfo = Object.values(activador.classList).includes("table-info") ? true : false
             
             activador.addEventListener('mouseover', () => {
                 // Agrega una clase a los elementos que se modificarán
                 Object.values(document.getElementsByClassName(Object.values(activador.classList).find(c => c.includes("seed")))).forEach(elemento => {
                     elemento.classList.add('selected-player');
+                    if (tableInfo && Object.values(elemento.classList).includes("seeding-tr")) {
+                        elemento.classList.remove("table-info")
+                    }
                 });
             })
 
@@ -25,6 +29,9 @@ function addStyles() {
                 // Agrega una clase a los elementos que se modificarán
                 Object.values(document.getElementsByClassName(Object.values(activador.classList).find(c => c.includes("seed")))).forEach(elemento => {
                     elemento.classList.remove('selected-player');
+                    if (tableInfo && Object.values(elemento.classList).includes("seeding-tr")) {
+                        elemento.classList.add("table-info")
+                    }
                 });
             })
         })
@@ -75,14 +82,16 @@ async function loadLeftBar(players) {
 function loadSeedingGroups(players, tier){
     let groups = sliceIntoChunks(players, 4);
     let divCont = document.getElementById("seeding-groups");
+    divCont.innerHTML = "";
 
     groups.forEach(function(group, i){
         let table = document.createElement('table');
         table.classList.add("table");
         table.classList.add("table-stripped");
+        table.classList.add("table-sm")
 
         table.innerHTML = `
-        <caption>Tómbola ${i+1} (${(i*4)+1}-${(i*4)+4})</caption>
+        <caption>Tómbola ${i+1} (Seeds ${(i*4)+1}-${(i*4)+4})</caption>
         `
         let tbody = document.createElement('tbody');
         group.forEach((p,i) => {
@@ -90,6 +99,12 @@ function loadSeedingGroups(players, tier){
             tr.classList.add("seed"+p.prevData.seed);
             tr.classList.add("player");
             tr.classList.add("asd");
+            tr.classList.add("seeding-tr");
+            if (p.group != null) {
+                tr.classList.add("table-info")
+            } else {
+                tr.classList.remove("table-info")
+            }
 
             let seed = document.createElement("th");
             seed.setAttribute("scope", "row")
@@ -179,7 +194,7 @@ async function loadGroups(tier){
         let g = Object.keys(groups)[i];
         if (g != "null") {
             let div = document.createElement("div");
-            
+            div.classList.add("table-cont");
             // let header = document.createElement("h3")
             // header.innerText = `Grupo ${g}`
             // div.appendChild(header);
@@ -247,11 +262,18 @@ async function loadPlayers(tier) {
 }
 
 async function updateGroups(tier){
+    let playerList = await fetch(`/api/players/${tier}`)
+    playerList = await playerList.json();
     await loadGroups(tier);
+    loadLeftBar(playerList);
+    loadSeedingGroups(playerList,tier);
     addStyles();
 }
 
 loadPlayers(1).then(()=>{
-
     addStyles();
+})
+
+document.getElementById("tier-selector").addEventListener("change", (e)=>{
+    updateGroups(e.target.value);
 })

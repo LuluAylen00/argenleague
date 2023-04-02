@@ -1,27 +1,55 @@
 body {
   height: 100vh;
   display: flex;
+  flex-direction: column;
+}
+
+body header {
+  display: flex;
+  justify-content: space-between;
+  padding: 1% 3%;
+  background-color: #13304c;
+  height: 15vh;
+}
+
+body header img {
+  width: 60px;
+  filter: drop-shadow(1px 1px 4px rgb(226, 226, 226));
+}
+
+body main {
+  display: flex;
+  height: 85vh;
+  background-color: #4a7ba1;
+}
+
+.table-cont {
+  background-color: white;
 }
 
 div#left-bar {
   width: 25vw;
-  height: 100%;
+  height: 95%;
   overflow-y: auto;
   overflow-x: visible;
+  margin: 1%;
 }
 
 #inv {
   display: none;
 }
 
-body .player.asd.selected-player {
+body tbody tr.player.asd.selected-player {
   background-color: rgba(146, 146, 146, 0.3);
 }
 
 div#main {
-  width: 70vw;
+  width: 75vw;
   display: flex;
   flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  padding: 1%;
 }
 
 div#cont {
@@ -65,4 +93,8 @@ body td, body th {
 
 body .table td, body .table th {
   vertical-align: middle;
+}
+
+body .btn-success {
+  padding: 3px 10px;
 }

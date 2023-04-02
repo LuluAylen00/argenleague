@@ -27,8 +27,11 @@ const model = {
         //     return g == 1 ? g == 1 : g == 2 ? g == 2 : g == 3 ? g == 3 : g == 4 ? g == 4 : false;
         // }
         if (group == null ? group == null : group == 1 ? group == 1 : group == 2 ? group == 2 : group == 3 ? group == 3 : group == 4 ? group == 4 : false) {
-            if (model.findByGroup(group).length == 4 && group != null) {
+            if (model.findByGroup(group).length == 4 && group != null) { // Grupo lleno
+                console.log(model.findByGroup(group));
                 return 500;
+            // } else if(model.findByGroup(group)) {
+
             } else {
                 data = data.map(p => {
                     if (p.id == playerId) {

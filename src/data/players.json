@@ -15,7 +15,7 @@
       "seed": 2,
       "elo": 2367
     },
-    "group": "2"
+    "group": null
   },
   {
     "id": 3,
@@ -24,7 +24,7 @@
       "seed": 3,
       "elo": 2325.5
     },
-    "group": "2"
+    "group": null
   },
   {
     "id": 4,
@@ -33,7 +33,7 @@
       "seed": 4,
       "elo": 2274.5
     },
-    "group": "2"
+    "group": null
   },
   {
     "id": 5,
@@ -51,7 +51,7 @@
       "seed": 6,
       "elo": 2252
     },
-    "group": "3"
+    "group": null
   },
   {
     "id": 7,
@@ -132,7 +132,7 @@
       "seed": 15,
       "elo": 2034
     },
-    "group": null
+    "group": "1"
   },
   {
     "id": 16,
