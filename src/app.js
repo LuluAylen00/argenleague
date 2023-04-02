@@ -3,7 +3,8 @@ const app = express();
 const fs = require("fs");
 const path = require("path")
 
-app.listen(3418, ()=> console.log("Servidor corriendo en el puerto 3418"))
+let port = process.env.PORT || 3418
+app.listen(port, ()=> console.log("Servidor corriendo en el puerto "+port))
 
 app.use(express.json());
 app.use(express.static(path.resolve(__dirname, "../public")));
