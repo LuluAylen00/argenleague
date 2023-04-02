@@ -1,0 +1,68 @@
+body {
+  height: 100vh;
+  display: flex;
+}
+
+div#left-bar {
+  width: 25vw;
+  height: 100%;
+  overflow-y: auto;
+  overflow-x: visible;
+}
+
+#inv {
+  display: none;
+}
+
+body .player.asd.selected-player {
+  background-color: rgba(146, 146, 146, 0.3);
+}
+
+div#main {
+  width: 70vw;
+  display: flex;
+  flex-direction: column;
+}
+
+div#cont {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+div#groups {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+}
+
+div#groups div {
+  border: solid 1px rgb(75 75 75 / 30%);
+  width: 23%;
+}
+
+#seeding-groups {
+  width: 100%;
+  display: flex;
+  /* justify-content: space-around; */
+  overflow-x: auto;
+}
+
+#seeding-groups table {
+  margin: 5px;
+  outline: solid 1px rgb(75 75 75 / 30%);
+}
+
+#seeding-groups table caption{
+  padding-left: 15px;
+}
+
+body td, body th {
+  text-align: center;
+    align-items: center;
+    vertical-align: middle;
+}
+
+body .table td, body .table th {
+  vertical-align: middle;
+}

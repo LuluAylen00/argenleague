@@ -1,0 +1,155 @@
+[
+  {
+    "id": 1,
+    "nick": "DS_Twigg",
+    "prevData": {
+      "seed": 1,
+      "elo": 2395
+    },
+    "group": "1"
+  },
+  {
+    "id": 2,
+    "nick": "Lucky Rox",
+    "prevData": {
+      "seed": 2,
+      "elo": 2367
+    },
+    "group": "2"
+  },
+  {
+    "id": 3,
+    "nick": "BL4CK",
+    "prevData": {
+      "seed": 3,
+      "elo": 2325.5
+    },
+    "group": "2"
+  },
+  {
+    "id": 4,
+    "nick": "DS_Biry",
+    "prevData": {
+      "seed": 4,
+      "elo": 2274.5
+    },
+    "group": "2"
+  },
+  {
+    "id": 5,
+    "nick": "Prisma",
+    "prevData": {
+      "seed": 5,
+      "elo": 2271
+    },
+    "group": "4"
+  },
+  {
+    "id": 6,
+    "nick": "DS_Levi",
+    "prevData": {
+      "seed": 6,
+      "elo": 2252
+    },
+    "group": "3"
+  },
+  {
+    "id": 7,
+    "nick": "Nahuel",
+    "prevData": {
+      "seed": 7,
+      "elo": 2224.5
+    },
+    "group": null
+  },
+  {
+    "id": 8,
+    "nick": "KH_Monoz",
+    "prevData": {
+      "seed": 8,
+      "elo": 2201.5
+    },
+    "group": null
+  },
+  {
+    "id": 9,
+    "nick": "DS_Carbo",
+    "prevData": {
+      "seed": 9,
+      "elo": 2149.5
+    },
+    "group": null
+  },
+  {
+    "id": 10,
+    "nick": "DS_VarVarus",
+    "prevData": {
+      "seed": 10,
+      "elo": 2109.5
+    },
+    "group": "4"
+  },
+  {
+    "id": 11,
+    "nick": "[sig] eskabe",
+    "prevData": {
+      "seed": 11,
+      "elo": 2097
+    },
+    "group": "3"
+  },
+  {
+    "id": 12,
+    "nick": "Redlash",
+    "prevData": {
+      "seed": 12,
+      "elo": 2044.5
+    },
+    "group": null
+  },
+  {
+    "id": 13,
+    "nick": "Lucho",
+    "prevData": {
+      "seed": 13,
+      "elo": 2042
+    },
+    "group": null
+  },
+  {
+    "id": 14,
+    "nick": "11_Tintin_Arg",
+    "prevData": {
+      "seed": 14,
+      "elo": 2040
+    },
+    "group": null
+  },
+  {
+    "id": 15,
+    "nick": "XEVER | Tatengue",
+    "prevData": {
+      "seed": 15,
+      "elo": 2034
+    },
+    "group": null
+  },
+  {
+    "id": 16,
+    "nick": "Micav",
+    "prevData": {
+      "seed": 16,
+      "elo": 2011
+    },
+    "group": null
+  },
+  {
+    "id": 17,
+    "nick": "Otro",
+    "prevData": {
+      "seed": 17,
+      "elo": 2010
+    },
+    "group": null
+  }
+]

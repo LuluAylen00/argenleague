@@ -1,0 +1,19 @@
+{
+  "name": "argenleague-dashboard",
+  "version": "1.0.0",
+  "description": "Dashboard de administración para el proyecto Argenleague (Organizado por RivuxTV)",
+  "main": "src/app.js",
+  "scripts": {
+    "test": "nodemon ./src/app.js",
+    "start": "node ./src/app.js"
+  },
+  "keywords": [],
+  "author": "luluaylen00 <luluaylen00@gmail.com> (https://github.com/LuluAylen00)",
+  "license": "ISC",
+  "dependencies": {
+    "express": "4.18.2"
+  },
+  "devDependencies": {
+    "nodemon": "2.0.21"
+  }
+}
