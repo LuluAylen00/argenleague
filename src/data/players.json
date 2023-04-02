@@ -145,10 +145,289 @@
   },
   {
     "id": 17,
-    "nick": "Otro",
+    "nick": "Chopi",
     "prevData": {
       "seed": 17,
-      "elo": 2010
+      "elo": 2003
+    },
+    "group": null
+  },
+  {
+    "id": 18,
+    "nick": "Dexter",
+    "prevData": {
+      "seed": 18,
+      "elo": 1952.5
+    },
+    "group": null
+  },
+  {
+    "id": 19,
+    "nick": "LHDP | BUCHI",
+    "prevData": {
+      "seed": 19,
+      "elo": 1920.5
+    },
+    "group": null
+  },
+  {
+    "id": 20,
+    "nick": "Franketohh",
+    "prevData": {
+      "seed": 20,
+      "elo": 1898.5
+    },
+    "group": null
+  },
+  {
+    "id": 21,
+    "nick": "TM Knolte",
+    "prevData": {
+      "seed": 21,
+      "elo": 1897.5
+    },
+    "group": null
+  },
+  {
+    "id": 22,
+    "nick": "satisfaction",
+    "prevData": {
+      "seed": 22,
+      "elo": 1880.5
+    },
+    "group": null
+  },
+  {
+    "id": 23,
+    "nick": "DS_Prodan",
+    "prevData": {
+      "seed": 23,
+      "elo": 1863.5
+    },
+    "group": null
+  },
+  {
+    "id": 24,
+    "nick": "Rodrixs",
+    "prevData": {
+      "seed": 24,
+      "elo": 1863.5
+    },
+    "group": null
+  },
+  {
+    "id": 25,
+    "nick": "Ds3.sszafranko",
+    "prevData": {
+      "seed": 25,
+      "elo": 1849.5
+    },
+    "group": null
+  },
+  {
+    "id": 26,
+    "nick": "CORP_Anakin",
+    "prevData": {
+      "seed": 26,
+      "elo": 1842
+    },
+    "group": null
+  },
+  {
+    "id": 27,
+    "nick": "XEVER | Aguscuruzu",
+    "prevData": {
+      "seed": 27,
+      "elo": 1831
+    },
+    "group": null
+  },
+  {
+    "id": 28,
+    "nick": "[MHT] Valeyellow99",
+    "prevData": {
+      "seed": 28,
+      "elo": 1827
+    },
+    "group": null
+  },
+  {
+    "id": 29,
+    "nick": "AAOE | Lucsor",
+    "prevData": {
+      "seed": 29,
+      "elo": 1822
+    },
+    "group": null
+  },
+  {
+    "id": 30,
+    "nick": "Martyyin",
+    "prevData": {
+      "seed": 30,
+      "elo": 1810
+    },
+    "group": null
+  },
+  {
+    "id": 31,
+    "nick": "El_Que_Maneja_la_Combi",
+    "prevData": {
+      "seed": 31,
+      "elo": 1803
+    },
+    "group": null
+  },
+  {
+    "id": 32,
+    "nick": "Pablog6",
+    "prevData": {
+      "seed": 32,
+      "elo": 1791
+    },
+    "group": null
+  },
+  {
+    "id": 33,
+    "nick": "__97_Lechuga_Arg",
+    "prevData": {
+      "seed": 33,
+      "elo": 1790
+    },
+    "group": null
+  },
+  {
+    "id": 34,
+    "nick": "Ds3.Reymon",
+    "prevData": {
+      "seed": 34,
+      "elo": 1789
+    },
+    "group": null
+  },
+  {
+    "id": 35,
+    "nick": "XEVER | CaboBV",
+    "prevData": {
+      "seed": 35,
+      "elo": 1785.5
+    },
+    "group": null
+  },
+  {
+    "id": 36,
+    "nick": "TM webber",
+    "prevData": {
+      "seed": 36,
+      "elo": 1782.5
+    },
+    "group": null
+  },
+  {
+    "id": 37,
+    "nick": "Dabs",
+    "prevData": {
+      "seed": 37,
+      "elo": 1781
+    },
+    "group": null
+  },
+  {
+    "id": 38,
+    "nick": "El Ti rex",
+    "prevData": {
+      "seed": 38,
+      "elo": 1760
+    },
+    "group": null
+  },
+  {
+    "id": 39,
+    "nick": "DGHIR | Yësicó",
+    "prevData": {
+      "seed": 39,
+      "elo": 1753
+    },
+    "group": null
+  },
+  {
+    "id": 40,
+    "nick": "[DaRs] PimiD10S",
+    "prevData": {
+      "seed": 40,
+      "elo": 1752
+    },
+    "group": null
+  },
+  {
+    "id": 41,
+    "nick": "Tuxtron935",
+    "prevData": {
+      "seed": 41,
+      "elo": 1741
+    },
+    "group": null
+  },
+  {
+    "id": 42,
+    "nick": "Zamaa",
+    "prevData": {
+      "seed": 42,
+      "elo": 1700
+    },
+    "group": null
+  },
+  {
+    "id": 43,
+    "nick": "TGT-Custom",
+    "prevData": {
+      "seed": 43,
+      "elo": 1699
+    },
+    "group": null
+  },
+  {
+    "id": 44,
+    "nick": "DS_Mascherano",
+    "prevData": {
+      "seed": 44,
+      "elo": 1660.5
+    },
+    "group": null
+  },
+  {
+    "id": 45,
+    "nick": "Raofi",
+    "prevData": {
+      "seed": 45,
+      "elo": 1646.5
+    },
+    "group": null
+  },
+  {
+    "id": 46,
+    "nick": "Vincent",
+    "prevData": {
+      "seed": 46,
+      "elo": 1640
+    },
+    "group": null
+  },
+  {
+    "id": 47,
+    "nick": "Ds3.SoLid",
+    "prevData": {
+      "seed": 47,
+      "elo": 1626
+    },
+    "group": null
+  },
+  {
+    "id": 48,
+    "nick": "TM Wosito",
+    "prevData": {
+      "seed": 48,
+      "elo": 1619
     },
     "group": null
   }
