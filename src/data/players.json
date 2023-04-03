@@ -159,7 +159,7 @@
       "seed": 18,
       "elo": 1952.5
     },
-    "group": null
+    "group": "2"
   },
   {
     "id": 19,
@@ -168,7 +168,7 @@
       "seed": 19,
       "elo": 1920.5
     },
-    "group": null
+    "group": "4"
   },
   {
     "id": 20,
@@ -177,7 +177,7 @@
       "seed": 20,
       "elo": 1898.5
     },
-    "group": null
+    "group": "3"
   },
   {
     "id": 21,
@@ -186,7 +186,7 @@
       "seed": 21,
       "elo": 1897.5
     },
-    "group": "2"
+    "group": "3"
   },
   {
     "id": 22,
@@ -204,7 +204,7 @@
       "seed": 23,
       "elo": 1863.5
     },
-    "group": null
+    "group": "4"
   },
   {
     "id": 24,
@@ -213,7 +213,7 @@
       "seed": 24,
       "elo": 1863.5
     },
-    "group": null
+    "group": "2"
   },
   {
     "id": 25,
@@ -222,7 +222,7 @@
       "seed": 25,
       "elo": 1849.5
     },
-    "group": null
+    "group": "2"
   },
   {
     "id": 26,
@@ -231,7 +231,7 @@
       "seed": 26,
       "elo": 1842
     },
-    "group": "1"
+    "group": "3"
   },
   {
     "id": 27,
@@ -240,7 +240,7 @@
       "seed": 27,
       "elo": 1831
     },
-    "group": null
+    "group": "1"
   },
   {
     "id": 28,
@@ -249,7 +249,7 @@
       "seed": 28,
       "elo": 1827
     },
-    "group": null
+    "group": "4"
   },
   {
     "id": 29,
@@ -258,7 +258,7 @@
       "seed": 29,
       "elo": 1822
     },
-    "group": null
+    "group": "2"
   },
   {
     "id": 30,
@@ -267,7 +267,7 @@
       "seed": 30,
       "elo": 1810
     },
-    "group": "1"
+    "group": "4"
   },
   {
     "id": 31,
@@ -276,7 +276,7 @@
       "seed": 31,
       "elo": 1803
     },
-    "group": null
+    "group": "1"
   },
   {
     "id": 32,
@@ -285,7 +285,7 @@
       "seed": 32,
       "elo": 1791
     },
-    "group": null
+    "group": "3"
   },
   {
     "id": 33,
@@ -294,7 +294,7 @@
       "seed": 33,
       "elo": 1790
     },
-    "group": null
+    "group": "4"
   },
   {
     "id": 34,
@@ -303,7 +303,7 @@
       "seed": 34,
       "elo": 1789
     },
-    "group": null
+    "group": "1"
   },
   {
     "id": 35,
@@ -312,7 +312,7 @@
       "seed": 35,
       "elo": 1785.5
     },
-    "group": null
+    "group": "3"
   },
   {
     "id": 36,
@@ -321,7 +321,7 @@
       "seed": 36,
       "elo": 1782.5
     },
-    "group": null
+    "group": "2"
   },
   {
     "id": 37,
@@ -330,7 +330,7 @@
       "seed": 37,
       "elo": 1781
     },
-    "group": null
+    "group": "4"
   },
   {
     "id": 38,
@@ -339,7 +339,7 @@
       "seed": 38,
       "elo": 1760
     },
-    "group": null
+    "group": "3"
   },
   {
     "id": 39,
@@ -348,7 +348,7 @@
       "seed": 39,
       "elo": 1753
     },
-    "group": null
+    "group": "1"
   },
   {
     "id": 40,
@@ -357,7 +357,7 @@
       "seed": 40,
       "elo": 1752
     },
-    "group": null
+    "group": "2"
   },
   {
     "id": 41,
@@ -366,7 +366,7 @@
       "seed": 41,
       "elo": 1741
     },
-    "group": null
+    "group": "3"
   },
   {
     "id": 42,
@@ -375,7 +375,7 @@
       "seed": 42,
       "elo": 1700
     },
-    "group": null
+    "group": "1"
   },
   {
     "id": 43,
@@ -384,7 +384,7 @@
       "seed": 43,
       "elo": 1699
     },
-    "group": null
+    "group": "4"
   },
   {
     "id": 44,
@@ -393,7 +393,7 @@
       "seed": 44,
       "elo": 1660.5
     },
-    "group": null
+    "group": "2"
   },
   {
     "id": 45,
@@ -402,7 +402,7 @@
       "seed": 45,
       "elo": 1646.5
     },
-    "group": null
+    "group": "3"
   },
   {
     "id": 46,
@@ -411,7 +411,7 @@
       "seed": 46,
       "elo": 1640
     },
-    "group": null
+    "group": "4"
   },
   {
     "id": 47,
@@ -420,7 +420,7 @@
       "seed": 47,
       "elo": 1626
     },
-    "group": null
+    "group": "2"
   },
   {
     "id": 48,
@@ -429,6 +429,6 @@
       "seed": 48,
       "elo": 1619
     },
-    "group": null
+    "group": "1"
   }
 ]

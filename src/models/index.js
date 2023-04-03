@@ -44,7 +44,8 @@ const model = {
                     }
                     return p;
                 })
-                model.createGroupMatches(tier);
+                
+                model.createGroupMatches(model.bringGroupMatches(), tier, null);
                 save(data, filePath);
                 return 200;
             }
@@ -115,7 +116,10 @@ const model = {
         let acc = []
         groupsToModify.forEach((group,i) => {
             // console.log(h[tier][i]);
-            let matches = [...h[tier][i][0],...h[tier][i][1],...h[tier][i][2]]
+            let matches = null;
+            if (matchId != null) {
+                matches = [...h[tier][i][0],...h[tier][i][1],...h[tier][i][2]]
+            }
             let g = []
 
             let baseId = (i*tier*5)
@@ -129,7 +133,7 @@ const model = {
                     schedule: "TBD",
                     draft: "TBD"
                 },
-                winner: matches.find((r) => r.id == (baseId+1)).winner
+                winner: matches ? matches.find((r) => r.id == (baseId+1)).winner : null
             });
             fechaUno.push({
                 id: baseId+2,
@@ -139,7 +143,7 @@ const model = {
                     schedule: "TBD",
                     draft: "TBD"
                 },
-                winner: matches.find((r) => r.id == (baseId+2)).winner
+                winner: matches ? matches.find((r) => r.id == (baseId+2)).winner : null
             });
             g.push(fechaUno);
 
@@ -152,7 +156,7 @@ const model = {
                     schedule: "TBD",
                     draft: "TBD"
                 },
-                winner: (matchId == baseId + 1 || matchId == baseId + 2) ? null : matches.find((r) => r.id == (baseId+3)).winner
+                winner: (matchId == baseId + 1 || matchId == baseId + 2) ? null : matches ? matches.find((r) => r.id == (baseId+3)).winner : null
             })
             fechaDos.push({
                 id: baseId+4,
@@ -162,7 +166,7 @@ const model = {
                     schedule: "TBD",
                     draft: "TBD"
                 },
-                winner: (matchId == baseId + 1 || matchId == baseId + 2) ? null : matches.find((r) => r.id == (baseId+4)).winner
+                winner: (matchId == baseId + 1 || matchId == baseId + 2) ? null : matches ? matches.find((r) => r.id == (baseId+4)).winner : null
             })
             g.push(fechaDos)
 
@@ -175,7 +179,7 @@ const model = {
                     schedule: "TBD",
                     draft: "TBD"
                 },
-                winner: (matchId == baseId + 1 || matchId == baseId + 2 || matchId == baseId + 3 || matchId == baseId + 4) ? null : matches.find((r) => r.id == (baseId+5)).winner
+                winner: (matchId == baseId + 1 || matchId == baseId + 2 || matchId == baseId + 3 || matchId == baseId + 4) ? null : matches ? matches.find((r) => r.id == (baseId+5)).winner : null
             })
             g.push(fechaTres)
 

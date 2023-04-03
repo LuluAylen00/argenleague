@@ -27,7 +27,9 @@ const controller = {
         });
     },
     apiShowGroups: function(req, res) {
-        res.send(model.bringGroupMatches(req.params.tier))
+        let result = model.bringGroupMatches(req.params.tier);
+        console.log(result);
+        res.status(200).send(result)
     },
     apiInitGroups: function(req, res) {
         res.send(model.createGroupMatches(req.params.tier))
