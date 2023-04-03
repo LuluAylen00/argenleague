@@ -1,0 +1,864 @@
+{
+  "1": [
+    [
+      [
+        {
+          "id": 1,
+          "playerOne": {
+            "id": 4,
+            "nick": "DS_Biry",
+            "prevData": {
+              "seed": 4,
+              "elo": 2274.5
+            },
+            "group": "1"
+          },
+          "playerTwo": {
+            "id": 9,
+            "nick": "DS_Carbo",
+            "prevData": {
+              "seed": 9,
+              "elo": 2149.5
+            },
+            "group": "1"
+          },
+          "info": {
+            "schedule": "TBD",
+            "draft": "TBD"
+          },
+          "winner": 1
+        },
+        {
+          "id": 2,
+          "playerOne": {
+            "id": 8,
+            "nick": "KH_Monoz",
+            "prevData": {
+              "seed": 8,
+              "elo": 2201.5
+            },
+            "group": "1"
+          },
+          "playerTwo": {
+            "id": 15,
+            "nick": "XEVER | Tatengue",
+            "prevData": {
+              "seed": 15,
+              "elo": 2034
+            },
+            "group": "1"
+          },
+          "info": {
+            "schedule": "TBD",
+            "draft": "TBD"
+          },
+          "winner": 0
+        }
+      ],
+      [
+        {
+          "id": 3,
+          "playerOne": {
+            "id": 9,
+            "nick": "DS_Carbo",
+            "prevData": {
+              "seed": 9,
+              "elo": 2149.5
+            },
+            "group": "1"
+          },
+          "playerTwo": {
+            "id": 8,
+            "nick": "KH_Monoz",
+            "prevData": {
+              "seed": 8,
+              "elo": 2201.5
+            },
+            "group": "1"
+          },
+          "info": {
+            "schedule": "TBD",
+            "draft": "TBD"
+          },
+          "winner": null
+        },
+        {
+          "id": 4,
+          "playerOne": {
+            "id": 4,
+            "nick": "DS_Biry",
+            "prevData": {
+              "seed": 4,
+              "elo": 2274.5
+            },
+            "group": "1"
+          },
+          "playerTwo": {
+            "id": 15,
+            "nick": "XEVER | Tatengue",
+            "prevData": {
+              "seed": 15,
+              "elo": 2034
+            },
+            "group": "1"
+          },
+          "info": {
+            "schedule": "TBD",
+            "draft": "TBD"
+          },
+          "winner": null
+        }
+      ],
+      [
+        {
+          "id": 5,
+          "playerOne": "TBD",
+          "playerTwo": "TBD",
+          "info": {
+            "schedule": "TBD",
+            "draft": "TBD"
+          },
+          "winner": null
+        }
+      ]
+    ],
+    [
+      [
+        {
+          "id": 6,
+          "playerOne": {
+            "id": 2,
+            "nick": "Lucky Rox",
+            "prevData": {
+              "seed": 2,
+              "elo": 2367
+            },
+            "group": "2"
+          },
+          "playerTwo": {
+            "id": 11,
+            "nick": "[sig] eskabe",
+            "prevData": {
+              "seed": 11,
+              "elo": 2097
+            },
+            "group": "2"
+          },
+          "info": {
+            "schedule": "TBD",
+            "draft": "TBD"
+          },
+          "winner": 0
+        },
+        {
+          "id": 7,
+          "playerOne": {
+            "id": 7,
+            "nick": "Nahuel",
+            "prevData": {
+              "seed": 7,
+              "elo": 2224.5
+            },
+            "group": "2"
+          },
+          "playerTwo": {
+            "id": 14,
+            "nick": "11_Tintin_Arg",
+            "prevData": {
+              "seed": 14,
+              "elo": 2040
+            },
+            "group": "2"
+          },
+          "info": {
+            "schedule": "TBD",
+            "draft": "TBD"
+          },
+          "winner": 0
+        }
+      ],
+      [
+        {
+          "id": 8,
+          "playerOne": {
+            "id": 2,
+            "nick": "Lucky Rox",
+            "prevData": {
+              "seed": 2,
+              "elo": 2367
+            },
+            "group": "2"
+          },
+          "playerTwo": {
+            "id": 7,
+            "nick": "Nahuel",
+            "prevData": {
+              "seed": 7,
+              "elo": 2224.5
+            },
+            "group": "2"
+          },
+          "info": {
+            "schedule": "TBD",
+            "draft": "TBD"
+          },
+          "winner": null
+        },
+        {
+          "id": 9,
+          "playerOne": {
+            "id": 11,
+            "nick": "[sig] eskabe",
+            "prevData": {
+              "seed": 11,
+              "elo": 2097
+            },
+            "group": "2"
+          },
+          "playerTwo": {
+            "id": 14,
+            "nick": "11_Tintin_Arg",
+            "prevData": {
+              "seed": 14,
+              "elo": 2040
+            },
+            "group": "2"
+          },
+          "info": {
+            "schedule": "TBD",
+            "draft": "TBD"
+          },
+          "winner": null
+        }
+      ],
+      [
+        {
+          "id": 10,
+          "playerOne": {
+            "id": 2,
+            "nick": "Lucky Rox",
+            "prevData": {
+              "seed": 2,
+              "elo": 2367
+            },
+            "group": "2"
+          },
+          "playerTwo": {
+            "id": 14,
+            "nick": "11_Tintin_Arg",
+            "prevData": {
+              "seed": 14,
+              "elo": 2040
+            },
+            "group": "2"
+          },
+          "info": {
+            "schedule": "TBD",
+            "draft": "TBD"
+          },
+          "winner": null
+        }
+      ]
+    ],
+    [
+      [
+        {
+          "id": 11,
+          "playerOne": {
+            "id": 3,
+            "nick": "BL4CK",
+            "prevData": {
+              "seed": 3,
+              "elo": 2325.5
+            },
+            "group": "3"
+          },
+          "playerTwo": {
+            "id": 12,
+            "nick": "Redlash",
+            "prevData": {
+              "seed": 12,
+              "elo": 2044.5
+            },
+            "group": "3"
+          },
+          "info": {
+            "schedule": "TBD",
+            "draft": "TBD"
+          },
+          "winner": 1
+        },
+        {
+          "id": 12,
+          "playerOne": {
+            "id": 5,
+            "nick": "Prisma",
+            "prevData": {
+              "seed": 5,
+              "elo": 2271
+            },
+            "group": "3"
+          },
+          "playerTwo": {
+            "id": 13,
+            "nick": "Lucho",
+            "prevData": {
+              "seed": 13,
+              "elo": 2042
+            },
+            "group": "3"
+          },
+          "info": {
+            "schedule": "TBD",
+            "draft": "TBD"
+          },
+          "winner": null
+        }
+      ],
+      [
+        {
+          "id": 13,
+          "playerOne": {
+            "id": 12,
+            "nick": "Redlash",
+            "prevData": {
+              "seed": 12,
+              "elo": 2044.5
+            },
+            "group": "3"
+          },
+          "playerTwo": "TBD",
+          "info": {
+            "schedule": "TBD",
+            "draft": "TBD"
+          },
+          "winner": null
+        },
+        {
+          "id": 14,
+          "playerOne": {
+            "id": 3,
+            "nick": "BL4CK",
+            "prevData": {
+              "seed": 3,
+              "elo": 2325.5
+            },
+            "group": "3"
+          },
+          "playerTwo": "TBD",
+          "info": {
+            "schedule": "TBD",
+            "draft": "TBD"
+          },
+          "winner": null
+        }
+      ],
+      [
+        {
+          "id": 15,
+          "playerOne": {
+            "id": 12,
+            "nick": "Redlash",
+            "prevData": {
+              "seed": 12,
+              "elo": 2044.5
+            },
+            "group": "3"
+          },
+          "playerTwo": "TBD",
+          "info": {
+            "schedule": "TBD",
+            "draft": "TBD"
+          },
+          "winner": null
+        }
+      ]
+    ],
+    [
+      [
+        {
+          "id": 16,
+          "playerOne": {
+            "id": 1,
+            "nick": "DS_Twigg",
+            "prevData": {
+              "seed": 1,
+              "elo": 2395
+            },
+            "group": "4"
+          },
+          "playerTwo": {
+            "id": 10,
+            "nick": "DS_VarVarus",
+            "prevData": {
+              "seed": 10,
+              "elo": 2109.5
+            },
+            "group": "4"
+          },
+          "info": {
+            "schedule": "TBD",
+            "draft": "TBD"
+          },
+          "winner": null
+        },
+        {
+          "id": 17,
+          "playerOne": {
+            "id": 6,
+            "nick": "DS_Levi",
+            "prevData": {
+              "seed": 6,
+              "elo": 2252
+            },
+            "group": "4"
+          },
+          "playerTwo": {
+            "id": 16,
+            "nick": "Micav",
+            "prevData": {
+              "seed": 16,
+              "elo": 2011
+            },
+            "group": "4"
+          },
+          "info": {
+            "schedule": "TBD",
+            "draft": "TBD"
+          },
+          "winner": null
+        }
+      ],
+      [
+        {
+          "id": 18,
+          "playerOne": "TBD",
+          "playerTwo": "TBD",
+          "info": {
+            "schedule": "TBD",
+            "draft": "TBD"
+          },
+          "winner": null
+        },
+        {
+          "id": 19,
+          "playerOne": "TBD",
+          "playerTwo": "TBD",
+          "info": {
+            "schedule": "TBD",
+            "draft": "TBD"
+          },
+          "winner": null
+        }
+      ],
+      [
+        {
+          "id": 20,
+          "playerOne": "TBD",
+          "playerTwo": "TBD",
+          "info": {
+            "schedule": "TBD",
+            "draft": "TBD"
+          },
+          "winner": null
+        }
+      ]
+    ]
+  ],
+  "2": [
+    [
+      [
+        {
+          "id": 1,
+          "playerOne": {
+            "id": 17,
+            "nick": "Chopi",
+            "prevData": {
+              "seed": 17,
+              "elo": 2003
+            },
+            "group": "1"
+          },
+          "playerTwo": {
+            "id": 26,
+            "nick": "CORP_Anakin",
+            "prevData": {
+              "seed": 26,
+              "elo": 1842
+            },
+            "group": "1"
+          },
+          "winner": 1
+        },
+        {
+          "id": 2,
+          "playerOne": {
+            "id": 22,
+            "nick": "satisfaction",
+            "prevData": {
+              "seed": 22,
+              "elo": 1880.5
+            },
+            "group": "1"
+          },
+          "playerTwo": {
+            "id": 30,
+            "nick": "Martyyin",
+            "prevData": {
+              "seed": 30,
+              "elo": 1810
+            },
+            "group": "1"
+          },
+          "winner": 0
+        }
+      ],
+      [
+        {
+          "id": 3,
+          "playerOne": {
+            "id": 26,
+            "nick": "CORP_Anakin",
+            "prevData": {
+              "seed": 26,
+              "elo": 1842
+            },
+            "group": "1"
+          },
+          "playerTwo": {
+            "id": 22,
+            "nick": "satisfaction",
+            "prevData": {
+              "seed": 22,
+              "elo": 1880.5
+            },
+            "group": "1"
+          },
+          "winner": null
+        },
+        {
+          "id": 4,
+          "playerOne": {
+            "id": 17,
+            "nick": "Chopi",
+            "prevData": {
+              "seed": 17,
+              "elo": 2003
+            },
+            "group": "1"
+          },
+          "playerTwo": {
+            "id": 30,
+            "nick": "Martyyin",
+            "prevData": {
+              "seed": 30,
+              "elo": 1810
+            },
+            "group": "1"
+          },
+          "winner": null
+        }
+      ],
+      [
+        {
+          "id": 5,
+          "playerOne": {
+            "id": 26,
+            "nick": "CORP_Anakin",
+            "prevData": {
+              "seed": 26,
+              "elo": 1842
+            },
+            "group": "1"
+          },
+          "playerTwo": {
+            "id": 30,
+            "nick": "Martyyin",
+            "prevData": {
+              "seed": 30,
+              "elo": 1810
+            },
+            "group": "1"
+          },
+          "winner": null
+        }
+      ]
+    ],
+    [
+      [
+        {
+          "id": 11,
+          "playerOne": {
+            "id": 21,
+            "nick": "TM Knolte",
+            "prevData": {
+              "seed": 21,
+              "elo": 1897.5
+            },
+            "group": "2"
+          },
+          "playerTwo": "TBD",
+          "winner": null
+        },
+        {
+          "id": 12,
+          "playerOne": "TBD",
+          "playerTwo": "TBD",
+          "winner": null
+        }
+      ],
+      [
+        {
+          "id": 13,
+          "playerOne": "TBD",
+          "playerTwo": "TBD",
+          "winner": null
+        },
+        {
+          "id": 14,
+          "playerOne": "TBD",
+          "playerTwo": "TBD",
+          "winner": null
+        }
+      ],
+      [
+        {
+          "id": 15,
+          "playerOne": "TBD",
+          "playerTwo": "TBD",
+          "winner": null
+        }
+      ]
+    ],
+    [
+      [
+        {
+          "id": 21,
+          "playerOne": "TBD",
+          "playerTwo": "TBD",
+          "winner": null
+        },
+        {
+          "id": 22,
+          "playerOne": "TBD",
+          "playerTwo": "TBD",
+          "winner": null
+        }
+      ],
+      [
+        {
+          "id": 23,
+          "playerOne": "TBD",
+          "playerTwo": "TBD",
+          "winner": null
+        },
+        {
+          "id": 24,
+          "playerOne": "TBD",
+          "playerTwo": "TBD",
+          "winner": null
+        }
+      ],
+      [
+        {
+          "id": 25,
+          "playerOne": "TBD",
+          "playerTwo": "TBD",
+          "winner": null
+        }
+      ]
+    ],
+    [
+      [
+        {
+          "id": 31,
+          "playerOne": "TBD",
+          "playerTwo": "TBD",
+          "winner": null
+        },
+        {
+          "id": 32,
+          "playerOne": "TBD",
+          "playerTwo": "TBD",
+          "winner": null
+        }
+      ],
+      [
+        {
+          "id": 33,
+          "playerOne": "TBD",
+          "playerTwo": "TBD",
+          "winner": null
+        },
+        {
+          "id": 34,
+          "playerOne": "TBD",
+          "playerTwo": "TBD",
+          "winner": null
+        }
+      ],
+      [
+        {
+          "id": 35,
+          "playerOne": "TBD",
+          "playerTwo": "TBD",
+          "winner": null
+        }
+      ]
+    ]
+  ],
+  "3": [
+    [
+      [
+        {
+          "id": 1,
+          "playerOne": "TBD",
+          "playerTwo": "TBD",
+          "winner": null
+        },
+        {
+          "id": 2,
+          "playerOne": "TBD",
+          "playerTwo": "TBD",
+          "winner": null
+        }
+      ],
+      [
+        {
+          "id": 3,
+          "playerOne": "TBD",
+          "playerTwo": "TBD",
+          "winner": null
+        },
+        {
+          "id": 4,
+          "playerOne": "TBD",
+          "playerTwo": "TBD",
+          "winner": null
+        }
+      ],
+      [
+        {
+          "id": 5,
+          "playerOne": "TBD",
+          "playerTwo": "TBD",
+          "winner": null
+        }
+      ]
+    ],
+    [
+      [
+        {
+          "id": 16,
+          "playerOne": "TBD",
+          "playerTwo": "TBD",
+          "winner": null
+        },
+        {
+          "id": 17,
+          "playerOne": "TBD",
+          "playerTwo": "TBD",
+          "winner": null
+        }
+      ],
+      [
+        {
+          "id": 18,
+          "playerOne": "TBD",
+          "playerTwo": "TBD",
+          "winner": null
+        },
+        {
+          "id": 19,
+          "playerOne": "TBD",
+          "playerTwo": "TBD",
+          "winner": null
+        }
+      ],
+      [
+        {
+          "id": 20,
+          "playerOne": "TBD",
+          "playerTwo": "TBD",
+          "winner": null
+        }
+      ]
+    ],
+    [
+      [
+        {
+          "id": 31,
+          "playerOne": "TBD",
+          "playerTwo": "TBD",
+          "winner": null
+        },
+        {
+          "id": 32,
+          "playerOne": "TBD",
+          "playerTwo": "TBD",
+          "winner": null
+        }
+      ],
+      [
+        {
+          "id": 33,
+          "playerOne": "TBD",
+          "playerTwo": "TBD",
+          "winner": null
+        },
+        {
+          "id": 34,
+          "playerOne": "TBD",
+          "playerTwo": "TBD",
+          "winner": null
+        }
+      ],
+      [
+        {
+          "id": 35,
+          "playerOne": "TBD",
+          "playerTwo": "TBD",
+          "winner": null
+        }
+      ]
+    ],
+    [
+      [
+        {
+          "id": 46,
+          "playerOne": "TBD",
+          "playerTwo": "TBD",
+          "winner": null
+        },
+        {
+          "id": 47,
+          "playerOne": "TBD",
+          "playerTwo": "TBD",
+          "winner": null
+        }
+      ],
+      [
+        {
+          "id": 48,
+          "playerOne": "TBD",
+          "playerTwo": "TBD",
+          "winner": null
+        },
+        {
+          "id": 49,
+          "playerOne": "TBD",
+          "playerTwo": "TBD",
+          "winner": null
+        }
+      ],
+      [
+        {
+          "id": 50,
+          "playerOne": "TBD",
+          "playerTwo": "TBD",
+          "winner": null
+        }
+      ]
+    ]
+  ]
+}

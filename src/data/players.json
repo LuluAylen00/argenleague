@@ -150,7 +150,7 @@
       "seed": 17,
       "elo": 2003
     },
-    "group": null
+    "group": "1"
   },
   {
     "id": 18,
@@ -186,7 +186,7 @@
       "seed": 21,
       "elo": 1897.5
     },
-    "group": null
+    "group": "2"
   },
   {
     "id": 22,
@@ -195,7 +195,7 @@
       "seed": 22,
       "elo": 1880.5
     },
-    "group": null
+    "group": "1"
   },
   {
     "id": 23,
@@ -231,7 +231,7 @@
       "seed": 26,
       "elo": 1842
     },
-    "group": null
+    "group": "1"
   },
   {
     "id": 27,
@@ -267,7 +267,7 @@
       "seed": 30,
       "elo": 1810
     },
-    "group": null
+    "group": "1"
   },
   {
     "id": 31,

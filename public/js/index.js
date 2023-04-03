@@ -1,7 +1,7 @@
 
 let divCont = document.getElementById("cont");
 
-function addStyles() {
+function addSeedingStyles() {
     document.getElementById("seeding-groups-h3").style.margin = "2px 15px";
 
     let elements = [];
@@ -257,7 +257,26 @@ async function loadGroups(tier){
 
 let tierSelector = document.getElementById("tier-selector");
 
-async function loadPlayers() {
+async function loadSeedingPage() {
+    document.getElementById("main-cont").innerHTML = `
+    <div id="left-bar" class="table-cont">
+            <table id="seed-table" class="table table-striped"></table>
+        </div>
+        <div id="main">
+            <div id="groups"></div>
+            <div id="cont" class="table-cont">
+                <h3 id="seeding-groups-h3">
+                    Grupos de sorteo 
+                    <i class="fa-solid fa-circle-info"></i>
+                    <p class="seeding-info">
+                        Los grupos de sorteo son creados dividiendo por 4 los jugadores según su número de seed inicial (basado en su elo), es decir, el primer grupo está conformado por los primeros 4 jugadores clasificados en cada categoría, el segundo por los segundos 4 (5-8) y así. <br />De estos grupos saldrá sorteado un jugador para cada uno de los grupos finales, quedando cada uno en un grupo distinto.
+                    </p>
+                </h3>
+                <div id="seeding-groups" class="table-responsive"></div>
+            </div>
+        </div>
+        <div id="inv"></div>
+    `;
     let params = new URLSearchParams(document.location.search);
     let t = params.get("t") || 1;
     tierSelector.value = t;
@@ -278,14 +297,49 @@ async function updateGroups(){
     await loadGroups(t);
     loadLeftBar(playerList);
     loadSeedingGroups(playerList,t);
-    addStyles();
+    addSeedingStyles();
 }
-
-loadPlayers(1).then(()=>{
-    addStyles();
-})
 
 tierSelector.addEventListener("change", (e)=>{
     insertParam('t', e.target.value);
-    updateGroups(e.target.value);
+    // updateGroups(e.target.value);
+    setPage()
+})
+
+async function setPage() {
+    let params = new URLSearchParams(document.location.search);
+    let p = params.get("p") || "seeding"
+    if (p == "seeding") {
+        await loadSeedingPage().then(()=>{
+            addSeedingStyles();
+        })
+    } else if (p == "groups") {
+        await loadGroupsPage().then(()=>{
+            addGroupsStyles();
+        })
+    } else if (p == "final") {
+        await loadFinalPage().then(()=>{
+            addFinalStyles();
+        })
+    } else {
+        insertParam('p', "seeding");
+        await loadSeedingPage().then(()=>{
+            addSeedingStyles();
+        })
+    }
+}
+
+setPage();
+
+document.getElementById("sort").addEventListener("click", ()=>{
+    insertParam('p', "seeding")
+    setPage();
+})
+document.getElementById("groupPhase").addEventListener("click", ()=>{
+    insertParam('p', "groups")
+    setPage();
+})
+document.getElementById("finalPhase").addEventListener("click", ()=>{
+    insertParam('p', "final")
+    setPage();
 })

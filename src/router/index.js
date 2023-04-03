@@ -12,6 +12,12 @@ app.post("/api/groups", controller.apiSetGroup);
 
 app.delete("/api/groups", controller.apiRemoveGroup);
 
+app.get("/api/group-phase/:tier", controller.apiShowGroups);
+
+app.post("/api/group-phase/:tier", controller.apiSetWinner);
+
+app.put("/api/group-phase/:tier", controller.apiUpdateMatchInfo);
+
 app.use((req,res,next) => {
     return res.redirect("/");
 })

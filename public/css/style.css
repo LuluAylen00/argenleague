@@ -12,6 +12,10 @@ body header {
   height: 15vh;
 }
 
+.navbar-nav {
+  font-size: 18px;
+}
+
 body header img {
   width: 60px;
   filter: drop-shadow(1px 1px 4px rgb(226, 226, 226));
@@ -59,14 +63,14 @@ div#cont {
   height: 50%;
 }
 
-div#groups {
+#main div#groups {
   display: flex;
   justify-content: space-around;
   width: 100%;
   height: 47%;
 }
 
-div#groups div {
+#main div#groups div {
   border: solid 1px rgb(75 75 75 / 30%);
   width: 23%;
 }
@@ -130,4 +134,71 @@ body .btn-success {
   border-radius: 15px;
   box-shadow: 1px 1px 3px rgba(0, 0, 0,0.2);
   border: 1px solid #13304c;
+}
+
+#main-groups {
+  width: 100%;
+  display: flex;
+  padding: 10px;
+}
+
+/* #main-groups .top-part div#groups div {
+  border: solid 1px rgb(75 75 75 / 30%);
+  width: 23%;
+} */
+
+.group-cont {
+  width: 23%;
+}
+
+#main-groups div#groups {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
+}
+
+#main-groups #groups .top-part, #main-groups #groups .bot-part {
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+#main-groups #groups .bot-part {
+  padding-bottom: 5px;
+}
+
+div.bot-part div.eachJCont {
+  width: 100%;
+}
+
+div.bot-part table {
+  width: 100%;
+  margin: 5px;
+}
+
+div.bot-part h3 {
+  font-size: 18px;
+  text-align: center;
+  padding-top: 7px;
+  margin-bottom: 3px;
+}
+
+div.bot-part td {
+  width:40%;
+  font-size: 0.95rem;
+}
+
+div.bot-part caption {
+  caption-side: top;
+  padding: 6px 0 3px 10px;
+  font-size: 13px;
+}
+
+.qualified, .winner {
+  background-color: rgba(72, 235, 86, 0.3);
+}
+
+.disqualified, .loser {
+  background-color: rgba(235, 72, 72, 0.3);
 }

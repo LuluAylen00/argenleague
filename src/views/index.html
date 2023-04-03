@@ -19,8 +19,19 @@
 <body>
     <header>
         <img src="/img/logo.png" alt="ArgenLeague">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-#13304c">
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+                    <a class="nav-item nav-link active" href="#" id="sort">Sorteo</a>
+                    <a class="nav-item nav-link active" href="#" id="groupPhase">Fase de grupos</a>
+                    <a class="nav-item nav-link disabled" href="#" id="finalPhase">Fase final</a>
+                  </div>
+            </div>
+        </nav>
         <!-- <nav>
-            <a href="#" id=""></a>
+            <a href="#" id="sort">Sorteo</a>
+            <a href="#" id="groupPhase">Fase de grupos</a>
+            <a href="#" id="finalPhase">Fase final</a>
         </nav> -->
         <select id="tier-selector">
             <option value="1">A</option>
@@ -28,7 +39,7 @@
             <option value="3">C</option>
         </select>
     </header>
-    <main>
+    <main id="main-cont">
         <div id="left-bar" class="table-cont">
             <table id="seed-table" class="table table-striped"></table>
         </div>
@@ -47,6 +58,8 @@
         </div>
         <div id="inv"></div>
     </main>
+    <script src="/js/final.js"></script>
+    <script src="/js/groups.js"></script>
     <script src="/js/utils.js"></script>
     <script src="/js/index.js"></script>
 </body>

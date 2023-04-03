@@ -25,6 +25,25 @@ const controller = {
         return res.send({
             status: 200
         });
+    },
+    apiShowGroups: function(req, res) {
+        res.send(model.bringGroupMatches(req.params.tier))
+    },
+    apiInitGroups: function(req, res) {
+        res.send(model.createGroupMatches(req.params.tier))
+    },
+    apiSetWinner: function(req, res) {
+        // console.log("Llegó una petición");
+        model.setWinner(req.body.match, req.params.tier, req.body.winner);
+        return res.send({
+            status: 200
+        })
+    },
+    apiUpdateMatchInfo: function(req, res) {
+        model.setMatchInfo(req.body.match, req.params.tier, {schedule: req.body.schedule, draft: req.body.draft});
+        return res.send({
+            status: 200
+        })
     }
 }
 
