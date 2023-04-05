@@ -22,6 +22,8 @@
             },
             "group": "1"
           },
+          "dependenciaUno": null,
+          "dependenciaDos": null,
           "info": {
             "schedule": "TBD",
             "draft": "TBD"
@@ -48,18 +50,30 @@
             },
             "group": "1"
           },
+          "dependenciaUno": null,
+          "dependenciaDos": null,
           "info": {
             "schedule": "TBD",
             "draft": "TBD"
           },
-          "winner": null
+          "winner": 0
         }
       ],
       [
         {
           "id": 3,
           "playerOne": "TBD",
-          "playerTwo": "TBD",
+          "playerTwo": {
+            "id": 8,
+            "nick": "KH_Monoz",
+            "prevData": {
+              "seed": 8,
+              "elo": 2201.5
+            },
+            "group": "1"
+          },
+          "dependenciaUno": 1,
+          "dependenciaDos": 2,
           "info": {
             "schedule": "TBD",
             "draft": "TBD"
@@ -69,7 +83,17 @@
         {
           "id": 4,
           "playerOne": "TBD",
-          "playerTwo": "TBD",
+          "playerTwo": {
+            "id": 15,
+            "nick": "XEVER | Tatengue",
+            "prevData": {
+              "seed": 15,
+              "elo": 2034
+            },
+            "group": "1"
+          },
+          "dependenciaUno": 1,
+          "dependenciaDos": 2,
           "info": {
             "schedule": "TBD",
             "draft": "TBD"
@@ -82,6 +106,8 @@
           "id": 5,
           "playerOne": "TBD",
           "playerTwo": "TBD",
+          "dependenciaUno": 3,
+          "dependenciaDos": 4,
           "info": {
             "schedule": "TBD",
             "draft": "TBD"
@@ -112,6 +138,8 @@
             },
             "group": "2"
           },
+          "dependenciaUno": null,
+          "dependenciaDos": null,
           "info": {
             "schedule": "TBD",
             "draft": "TBD"
@@ -138,6 +166,8 @@
             },
             "group": "2"
           },
+          "dependenciaUno": null,
+          "dependenciaDos": null,
           "info": {
             "schedule": "TBD",
             "draft": "TBD"
@@ -150,6 +180,8 @@
           "id": 8,
           "playerOne": "TBD",
           "playerTwo": "TBD",
+          "dependenciaUno": 6,
+          "dependenciaDos": 7,
           "info": {
             "schedule": "TBD",
             "draft": "TBD"
@@ -160,6 +192,8 @@
           "id": 9,
           "playerOne": "TBD",
           "playerTwo": "TBD",
+          "dependenciaUno": 6,
+          "dependenciaDos": 7,
           "info": {
             "schedule": "TBD",
             "draft": "TBD"
@@ -172,6 +206,8 @@
           "id": 10,
           "playerOne": "TBD",
           "playerTwo": "TBD",
+          "dependenciaUno": 8,
+          "dependenciaDos": 9,
           "info": {
             "schedule": "TBD",
             "draft": "TBD"
@@ -202,6 +238,8 @@
             },
             "group": "3"
           },
+          "dependenciaUno": null,
+          "dependenciaDos": null,
           "info": {
             "schedule": "TBD",
             "draft": "TBD"
@@ -228,6 +266,8 @@
             },
             "group": "3"
           },
+          "dependenciaUno": null,
+          "dependenciaDos": null,
           "info": {
             "schedule": "TBD",
             "draft": "TBD"
@@ -240,6 +280,8 @@
           "id": 13,
           "playerOne": "TBD",
           "playerTwo": "TBD",
+          "dependenciaUno": 11,
+          "dependenciaDos": 12,
           "info": {
             "schedule": "TBD",
             "draft": "TBD"
@@ -250,6 +292,8 @@
           "id": 14,
           "playerOne": "TBD",
           "playerTwo": "TBD",
+          "dependenciaUno": 11,
+          "dependenciaDos": 12,
           "info": {
             "schedule": "TBD",
             "draft": "TBD"
@@ -262,6 +306,8 @@
           "id": 15,
           "playerOne": "TBD",
           "playerTwo": "TBD",
+          "dependenciaUno": 13,
+          "dependenciaDos": 14,
           "info": {
             "schedule": "TBD",
             "draft": "TBD"
@@ -292,6 +338,8 @@
             },
             "group": "4"
           },
+          "dependenciaUno": null,
+          "dependenciaDos": null,
           "info": {
             "schedule": "TBD",
             "draft": "TBD"
@@ -318,6 +366,8 @@
             },
             "group": "4"
           },
+          "dependenciaUno": null,
+          "dependenciaDos": null,
           "info": {
             "schedule": "TBD",
             "draft": "TBD"
@@ -330,6 +380,8 @@
           "id": 18,
           "playerOne": "TBD",
           "playerTwo": "TBD",
+          "dependenciaUno": 16,
+          "dependenciaDos": 17,
           "info": {
             "schedule": "TBD",
             "draft": "TBD"
@@ -340,6 +392,8 @@
           "id": 19,
           "playerOne": "TBD",
           "playerTwo": "TBD",
+          "dependenciaUno": 16,
+          "dependenciaDos": 17,
           "info": {
             "schedule": "TBD",
             "draft": "TBD"
@@ -352,6 +406,8 @@
           "id": 20,
           "playerOne": "TBD",
           "playerTwo": "TBD",
+          "dependenciaUno": 18,
+          "dependenciaDos": 19,
           "info": {
             "schedule": "TBD",
             "draft": "TBD"
@@ -384,6 +440,8 @@
             },
             "group": "1"
           },
+          "dependenciaUno": null,
+          "dependenciaDos": null,
           "info": {
             "schedule": "TBD",
             "draft": "TBD"
@@ -410,6 +468,8 @@
             },
             "group": "1"
           },
+          "dependenciaUno": null,
+          "dependenciaDos": null,
           "info": {
             "schedule": "TBD",
             "draft": "TBD"
@@ -422,6 +482,8 @@
           "id": 3,
           "playerOne": "TBD",
           "playerTwo": "TBD",
+          "dependenciaUno": 1,
+          "dependenciaDos": 2,
           "info": {
             "schedule": "TBD",
             "draft": "TBD"
@@ -432,6 +494,8 @@
           "id": 4,
           "playerOne": "TBD",
           "playerTwo": "TBD",
+          "dependenciaUno": 1,
+          "dependenciaDos": 2,
           "info": {
             "schedule": "TBD",
             "draft": "TBD"
@@ -444,6 +508,8 @@
           "id": 5,
           "playerOne": "TBD",
           "playerTwo": "TBD",
+          "dependenciaUno": 3,
+          "dependenciaDos": 4,
           "info": {
             "schedule": "TBD",
             "draft": "TBD"
@@ -474,6 +540,8 @@
             },
             "group": "2"
           },
+          "dependenciaUno": null,
+          "dependenciaDos": null,
           "info": {
             "schedule": "TBD",
             "draft": "TBD"
@@ -500,18 +568,30 @@
             },
             "group": "2"
           },
+          "dependenciaUno": null,
+          "dependenciaDos": null,
           "info": {
             "schedule": "TBD",
             "draft": "TBD"
           },
-          "winner": null
+          "winner": 1
         }
       ],
       [
         {
           "id": 13,
           "playerOne": "TBD",
-          "playerTwo": "TBD",
+          "playerTwo": {
+            "id": 29,
+            "nick": "AAOE | Lucsor",
+            "prevData": {
+              "seed": 29,
+              "elo": 1822
+            },
+            "group": "2"
+          },
+          "dependenciaUno": 11,
+          "dependenciaDos": 12,
           "info": {
             "schedule": "TBD",
             "draft": "TBD"
@@ -521,7 +601,17 @@
         {
           "id": 14,
           "playerOne": "TBD",
-          "playerTwo": "TBD",
+          "playerTwo": {
+            "id": 24,
+            "nick": "Rodrixs",
+            "prevData": {
+              "seed": 24,
+              "elo": 1863.5
+            },
+            "group": "2"
+          },
+          "dependenciaUno": 11,
+          "dependenciaDos": 12,
           "info": {
             "schedule": "TBD",
             "draft": "TBD"
@@ -534,6 +624,8 @@
           "id": 15,
           "playerOne": "TBD",
           "playerTwo": "TBD",
+          "dependenciaUno": 13,
+          "dependenciaDos": 14,
           "info": {
             "schedule": "TBD",
             "draft": "TBD"
@@ -564,6 +656,8 @@
             },
             "group": "3"
           },
+          "dependenciaUno": null,
+          "dependenciaDos": null,
           "info": {
             "schedule": "TBD",
             "draft": "TBD"
@@ -590,6 +684,8 @@
             },
             "group": "3"
           },
+          "dependenciaUno": null,
+          "dependenciaDos": null,
           "info": {
             "schedule": "TBD",
             "draft": "TBD"
@@ -602,6 +698,8 @@
           "id": 23,
           "playerOne": "TBD",
           "playerTwo": "TBD",
+          "dependenciaUno": 21,
+          "dependenciaDos": 22,
           "info": {
             "schedule": "TBD",
             "draft": "TBD"
@@ -612,6 +710,8 @@
           "id": 24,
           "playerOne": "TBD",
           "playerTwo": "TBD",
+          "dependenciaUno": 21,
+          "dependenciaDos": 22,
           "info": {
             "schedule": "TBD",
             "draft": "TBD"
@@ -624,6 +724,8 @@
           "id": 25,
           "playerOne": "TBD",
           "playerTwo": "TBD",
+          "dependenciaUno": 23,
+          "dependenciaDos": 24,
           "info": {
             "schedule": "TBD",
             "draft": "TBD"
@@ -654,6 +756,8 @@
             },
             "group": "4"
           },
+          "dependenciaUno": null,
+          "dependenciaDos": null,
           "info": {
             "schedule": "TBD",
             "draft": "TBD"
@@ -680,6 +784,8 @@
             },
             "group": "4"
           },
+          "dependenciaUno": null,
+          "dependenciaDos": null,
           "info": {
             "schedule": "TBD",
             "draft": "TBD"
@@ -692,6 +798,8 @@
           "id": 33,
           "playerOne": "TBD",
           "playerTwo": "TBD",
+          "dependenciaUno": 31,
+          "dependenciaDos": 32,
           "info": {
             "schedule": "TBD",
             "draft": "TBD"
@@ -702,6 +810,8 @@
           "id": 34,
           "playerOne": "TBD",
           "playerTwo": "TBD",
+          "dependenciaUno": 31,
+          "dependenciaDos": 32,
           "info": {
             "schedule": "TBD",
             "draft": "TBD"
@@ -714,6 +824,8 @@
           "id": 35,
           "playerOne": "TBD",
           "playerTwo": "TBD",
+          "dependenciaUno": 33,
+          "dependenciaDos": 34,
           "info": {
             "schedule": "TBD",
             "draft": "TBD"
@@ -746,6 +858,8 @@
             },
             "group": "1"
           },
+          "dependenciaUno": null,
+          "dependenciaDos": null,
           "info": {
             "schedule": "TBD",
             "draft": "TBD"
@@ -772,6 +886,8 @@
             },
             "group": "1"
           },
+          "dependenciaUno": null,
+          "dependenciaDos": null,
           "info": {
             "schedule": "TBD",
             "draft": "TBD"
@@ -784,6 +900,8 @@
           "id": 3,
           "playerOne": "TBD",
           "playerTwo": "TBD",
+          "dependenciaUno": 1,
+          "dependenciaDos": 2,
           "info": {
             "schedule": "TBD",
             "draft": "TBD"
@@ -794,6 +912,8 @@
           "id": 4,
           "playerOne": "TBD",
           "playerTwo": "TBD",
+          "dependenciaUno": 1,
+          "dependenciaDos": 2,
           "info": {
             "schedule": "TBD",
             "draft": "TBD"
@@ -806,6 +926,8 @@
           "id": 5,
           "playerOne": "TBD",
           "playerTwo": "TBD",
+          "dependenciaUno": 3,
+          "dependenciaDos": 4,
           "info": {
             "schedule": "TBD",
             "draft": "TBD"
@@ -836,6 +958,8 @@
             },
             "group": "2"
           },
+          "dependenciaUno": null,
+          "dependenciaDos": null,
           "info": {
             "schedule": "TBD",
             "draft": "TBD"
@@ -862,6 +986,8 @@
             },
             "group": "2"
           },
+          "dependenciaUno": null,
+          "dependenciaDos": null,
           "info": {
             "schedule": "TBD",
             "draft": "TBD"
@@ -874,6 +1000,8 @@
           "id": 18,
           "playerOne": "TBD",
           "playerTwo": "TBD",
+          "dependenciaUno": 16,
+          "dependenciaDos": 17,
           "info": {
             "schedule": "TBD",
             "draft": "TBD"
@@ -884,6 +1012,8 @@
           "id": 19,
           "playerOne": "TBD",
           "playerTwo": "TBD",
+          "dependenciaUno": 16,
+          "dependenciaDos": 17,
           "info": {
             "schedule": "TBD",
             "draft": "TBD"
@@ -896,6 +1026,8 @@
           "id": 20,
           "playerOne": "TBD",
           "playerTwo": "TBD",
+          "dependenciaUno": 18,
+          "dependenciaDos": 19,
           "info": {
             "schedule": "TBD",
             "draft": "TBD"
@@ -926,6 +1058,8 @@
             },
             "group": "3"
           },
+          "dependenciaUno": null,
+          "dependenciaDos": null,
           "info": {
             "schedule": "TBD",
             "draft": "TBD"
@@ -952,6 +1086,8 @@
             },
             "group": "3"
           },
+          "dependenciaUno": null,
+          "dependenciaDos": null,
           "info": {
             "schedule": "TBD",
             "draft": "TBD"
@@ -964,6 +1100,8 @@
           "id": 33,
           "playerOne": "TBD",
           "playerTwo": "TBD",
+          "dependenciaUno": 31,
+          "dependenciaDos": 32,
           "info": {
             "schedule": "TBD",
             "draft": "TBD"
@@ -974,6 +1112,8 @@
           "id": 34,
           "playerOne": "TBD",
           "playerTwo": "TBD",
+          "dependenciaUno": 31,
+          "dependenciaDos": 32,
           "info": {
             "schedule": "TBD",
             "draft": "TBD"
@@ -986,6 +1126,8 @@
           "id": 35,
           "playerOne": "TBD",
           "playerTwo": "TBD",
+          "dependenciaUno": 33,
+          "dependenciaDos": 34,
           "info": {
             "schedule": "TBD",
             "draft": "TBD"
@@ -1016,6 +1158,8 @@
             },
             "group": "4"
           },
+          "dependenciaUno": null,
+          "dependenciaDos": null,
           "info": {
             "schedule": "TBD",
             "draft": "TBD"
@@ -1042,6 +1186,8 @@
             },
             "group": "4"
           },
+          "dependenciaUno": null,
+          "dependenciaDos": null,
           "info": {
             "schedule": "TBD",
             "draft": "TBD"
@@ -1054,6 +1200,8 @@
           "id": 48,
           "playerOne": "TBD",
           "playerTwo": "TBD",
+          "dependenciaUno": 46,
+          "dependenciaDos": 47,
           "info": {
             "schedule": "TBD",
             "draft": "TBD"
@@ -1064,6 +1212,8 @@
           "id": 49,
           "playerOne": "TBD",
           "playerTwo": "TBD",
+          "dependenciaUno": 46,
+          "dependenciaDos": 47,
           "info": {
             "schedule": "TBD",
             "draft": "TBD"
@@ -1076,6 +1226,8 @@
           "id": 50,
           "playerOne": "TBD",
           "playerTwo": "TBD",
+          "dependenciaUno": 48,
+          "dependenciaDos": 49,
           "info": {
             "schedule": "TBD",
             "draft": "TBD"

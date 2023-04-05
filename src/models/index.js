@@ -113,7 +113,8 @@ const model = {
             return Object.keys(model.findAllGroups(tier))[i] != "null"
         });
         // console.log(groupsToModify);
-        let acc = []
+        let acc = [];
+        let anotherAcc = [];
         groupsToModify.forEach((group,i) => {
             // console.log(h[tier][i]);
             let matches = null;
@@ -129,6 +130,8 @@ const model = {
                 id: baseId+1,
                 playerOne: group[0] || "TBD",
                 playerTwo: group[2] || "TBD",
+                dependenciaUno: null,
+                dependenciaDos: null,
                 info: {
                     schedule: "TBD",
                     draft: "TBD"
@@ -139,6 +142,8 @@ const model = {
                 id: baseId+2,
                 playerOne: group[1] || "TBD",
                 playerTwo: group[3] || "TBD",
+                dependenciaUno: null,
+                dependenciaDos: null,
                 info: {
                     schedule: "TBD",
                     draft: "TBD"
@@ -152,6 +157,8 @@ const model = {
                 id: baseId+3,
                 playerOne: fechaUno[0].winner == 0 && fechaUno[0].winner != null ? fechaUno[0].playerOne : fechaUno[0].winner != null ? fechaUno[0].playerTwo : undefined || "TBD",
                 playerTwo: fechaUno[1].winner == 0 && fechaUno[1].winner != null ? fechaUno[1].playerOne : fechaUno[1].winner != null ? fechaUno[1].playerTwo : undefined || "TBD",
+                dependenciaUno: fechaUno[0].id,
+                dependenciaDos: fechaUno[1].id,
                 info: {
                     schedule: "TBD",
                     draft: "TBD"
@@ -162,6 +169,8 @@ const model = {
                 id: baseId+4,
                 playerOne: fechaUno[0].winner == 0 && fechaUno[0].winner != null ? fechaUno[0].playerTwo : fechaUno[0].winner != null ? fechaUno[0].playerOne : undefined || "TBD",
                 playerTwo: fechaUno[1].winner == 0 && fechaUno[1].winner != null ? fechaUno[1].playerTwo : fechaUno[1].winner != null ? fechaUno[1].playerOne : undefined || "TBD",
+                dependenciaUno: fechaUno[0].id,
+                dependenciaDos: fechaUno[1].id,
                 info: {
                     schedule: "TBD",
                     draft: "TBD"
@@ -175,6 +184,8 @@ const model = {
                 id: baseId+5,
                 playerOne: (matchId == baseId + 1 || matchId == baseId + 2) ? "TBD" : fechaDos[0].winner == 0 && fechaUno[0].winner != null ? fechaDos[0].playerTwo : fechaUno[0].winner != null ? fechaDos[0].playerOne : undefined || "TBD",
                 playerTwo: (matchId == baseId + 1 || matchId == baseId + 2) ? "TBD" : fechaDos[1].winner == 0 && fechaUno[1].winner != null ? fechaDos[1].playerOne : fechaUno[1].winner != null ? fechaDos[1].playerTwo : undefined || "TBD",
+                dependenciaUno: fechaDos[0].id,
+                dependenciaDos: fechaDos[1].id,
                 info: {
                     schedule: "TBD",
                     draft: "TBD"
@@ -182,11 +193,14 @@ const model = {
                 winner: (matchId == baseId + 1 || matchId == baseId + 2 || matchId == baseId + 3 || matchId == baseId + 4) ? null : matches ? matches.find((r) => r.id == (baseId+5)).winner : null
             })
             g.push(fechaTres)
-
+            anotherAcc = [...anotherAcc, ...fechaUno, ...fechaDos,...fechaTres]
             acc.push(g);
         })
         h[tier] = acc;
         // console.log(h[tier]);
+        // let string = "INSERT INTO partidas (jugadorUnoId, jugadorDosId, fechaId, horario, draft, categoriaId, dependenciaUnoId,dependenciaDosId) VALUES "
+        // string += anotherAcc.map((p,i) => `(${p.playerOne ? p.playerOne.id || "null" : "null,"+tier+","+p.dependenciaUno+","+p.dependenciaDos+")"},${p.playerTwo ? p.playerTwo.id || "null" : "null,"+tier+","+p.dependenciaUno+","+p.dependenciaDos+")"},${p.id%5 == 0 ? 3 : p.id % 5 >= 3 ? 2 : 1 }, null, null,${tier+","+p.dependenciaUno+","+p.dependenciaDos})`).toString()
+        // console.log(string);
         model.saveGroupMatches(h);
         return acc;
     },
