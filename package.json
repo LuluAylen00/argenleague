@@ -6,15 +6,20 @@
   "scripts": {
     "test": "nodemon ./src/app.js",
     "start": "node ./src/app.js",
-    "initialize": "npm i && node ./src/app.js"
+    "initialize": "npm i && node ./src/app.js",
+    "init": "sequelize init"
   },
   "keywords": [],
   "author": "luluaylen00 <luluaylen00@gmail.com> (https://github.com/LuluAylen00)",
   "license": "ISC",
   "dependencies": {
-    "express": "4.18.2"
+    "dotenv": "16.0.3",
+    "express": "4.18.2",
+    "mysql2": "3.2.0",
+    "sequelize": "6.30.0"
   },
   "devDependencies": {
-    "nodemon": "2.0.21"
+    "nodemon": "2.0.21",
+    "sequelize-cli": "6.6.0"
   }
 }

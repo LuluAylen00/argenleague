@@ -52,14 +52,22 @@
             "schedule": "TBD",
             "draft": "TBD"
           },
-          "winner": null
+          "winner": 0
         }
       ],
       [
         {
           "id": 3,
           "playerOne": "TBD",
-          "playerTwo": "TBD",
+          "playerTwo": {
+            "id": 8,
+            "nick": "KH_Monoz",
+            "prevData": {
+              "seed": 8,
+              "elo": 2201.5
+            },
+            "group": "1"
+          },
           "info": {
             "schedule": "TBD",
             "draft": "TBD"
@@ -69,7 +77,15 @@
         {
           "id": 4,
           "playerOne": "TBD",
-          "playerTwo": "TBD",
+          "playerTwo": {
+            "id": 15,
+            "nick": "XEVER | Tatengue",
+            "prevData": {
+              "seed": 15,
+              "elo": 2034
+            },
+            "group": "1"
+          },
           "info": {
             "schedule": "TBD",
             "draft": "TBD"

@@ -1,3 +1,5 @@
+verifyAdmin()
+
 async function loadGroupsPhase(tier){
     let groups = await fetch("/api/groups/"+tier);
     groups = await groups.json();
@@ -11,8 +13,10 @@ async function loadGroupsPhase(tier){
 
     // console.log("groups", groups);
     let list = [groups["1"],groups["2"],groups["3"],groups["4"]]
+    // console.log(list);
     // console.log("list",list);
-    let groupFromPhase = Object.values(groupPhase)
+    let groupFromPhase = getMatches(groupPhase)
+    
     list.forEach(function(group, i){
         let g = Object.keys(groups)[i];
         // console.log(g);
@@ -41,7 +45,7 @@ async function loadGroupsPhase(tier){
             group.forEach((p,i) => {
                 // console.log(p);
                 let tr = document.createElement('tr');
-                tr.classList.add("seed"+p.prevData.seed);
+                tr.classList.add("seed"+p.semilla);
                 tr.classList.add("player");
                 tr.classList.add("asd");
                 // console.log(groupPhase);
@@ -50,7 +54,8 @@ async function loadGroupsPhase(tier){
                 td.innerHTML = p.nick;
                 tr.appendChild(td);
 
-                let wlScore = calcPoints(p.nick,groupFromPhase)
+                let wlScore = calcPoints(p.nick,groupFromPhase);
+                // console.log("nick",p.nick, wlScore);
                 let wl = document.createElement("th");
                 wl.setAttribute("scope", "row")
                 wl.innerHTML = `${wlScore[0]}/${wlScore[1]}`;
@@ -73,10 +78,12 @@ async function loadGroupsPhase(tier){
             let botPart = document.createElement('div');
             botPart.classList.add("bot-part");
             
-            console.log("asd", groupFromPhase);
+            // console.log("asd", groupFromPhase);
             // console.log();
 
-            groupFromPhase[tier-1][i].forEach((gro,f) => {
+            // console.log(getMatches(groupFromPhase, 1));
+            // console.log(groupFromPhase);
+            groupFromPhase[i].forEach((gro,f) => {
                 let eachJCont = document.createElement("div");
                 eachJCont.classList.add("eachJCont")
 
@@ -103,11 +110,12 @@ async function loadGroupsPhase(tier){
                         let tr = document.createElement("tr");
                         
                         let td1 = document.createElement("td");
-                        td1.innerHTML = gr.playerOne.nick || "A definir";
+                        td1.innerHTML = gr.jugadorUno ? gr.jugadorUno.nick : "A definir";
                         tr.appendChild(td1);
-                        if (gr.winner == 0) {
+                        // console.log(gr);
+                        if (gr.ganador == 0) {
                             td1.classList.add("winner");
-                        } else if (gr.winner == 1){
+                        } else if (gr.ganador == 1){
                             td1.classList.add("loser");
                         }
                         
@@ -117,14 +125,16 @@ async function loadGroupsPhase(tier){
                         tr.appendChild(td2);
     
                         let td3 = document.createElement("td");
-                        td3.innerHTML = gr.playerTwo.nick || "A definir";
+                        td3.innerHTML = gr.jugadorDos ? gr.jugadorDos.nick : "A definir"
                         tr.appendChild(td3);
-                        if (gr.winner == 1) {
+                        if (gr.ganador == 1) {
                             td3.classList.add("winner");
-                        } else if (gr.winner == 0){
+                        } else if (gr.ganador == 0){
                             td3.classList.add("loser");
                         }
-                        tr.addEventListener('dblclick',() => setAWinner(gr,tier,{number: g, members: group},(f+1)))
+                        if (verifyAdmin()) {
+                            tr.addEventListener('dblclick',() => setAWinner(gr,tier,{number: g, members: group},(f+1)))
+                        }
                         t.appendChild(tr)
                         eachJCont.appendChild(t)
                     })
@@ -146,11 +156,11 @@ async function loadGroupsPhase(tier){
                             let tr = document.createElement("tr");
                             
                             let td1 = document.createElement("td");
-                            td1.innerHTML = gr.playerOne.nick || "A definir";
+                            td1.innerHTML = gr.jugadorUno ? gr.jugadorUno.nick : "A definir";
                             tr.appendChild(td1);
-                            if (gr.winner == 0) {
+                            if (gr.ganador == 0) {
                                 td1.classList.add("winner");
-                            } else if (gr.winner == 1){
+                            } else if (gr.ganador == 1){
                                 td1.classList.add("loser");
                             }
                             
@@ -160,14 +170,16 @@ async function loadGroupsPhase(tier){
                             tr.appendChild(td2);
         
                             let td3 = document.createElement("td");
-                            td3.innerHTML = gr.playerTwo.nick || "A definir";
+                            td3.innerHTML = gr.jugadorDos ? gr.jugadorDos.nick : "A definir"
                             tr.appendChild(td3);
-                            if (gr.winner == 1) {
+                            if (gr.ganador == 1) {
                                 td3.classList.add("winner");
-                            } else if (gr.winner == 0){
+                            } else if (gr.ganador == 0){
                                 td3.classList.add("loser");
                             }
-                            tr.addEventListener('dblclick',() => setAWinner(gr,tier,{number: g, members: group},(f+1)))
+                            if (verifyAdmin()) {
+                                tr.addEventListener('dblclick',() => setAWinner(gr,tier,{number: g, members: group},(f+1)));
+                            }
                             t.appendChild(tr)
                     })
                     
@@ -183,18 +195,18 @@ async function loadGroupsPhase(tier){
 }
 
 async function loadGroupsPage() {
-    document.getElementById("main-cont").innerHTML = `
-        <div id="main-groups">
-            <div id="groups"></div>
-        </div>
-        <div id="inv"></div>
-    `;
     let params = new URLSearchParams(document.location.search);
     let t = params.get("t") || 1;
     tierSelector.value = t;
     let playerList = await fetch(`/api/players/${t}`)
     playerList = await playerList.json();
     // console.log(playerList);
+    document.getElementById("main-cont").innerHTML = `
+        <div id="main-groups">
+            <div id="groups"></div>
+        </div>
+        <div id="inv"></div>
+    `;
     await loadGroupsPhase(t);
     // loadLeftBar(playerList);
     // loadSeedingGroups(playerList,t);

@@ -46,26 +46,30 @@ async function loadLeftBar(players) {
     leftTable.innerHTML = `
     <thead class="thead-dark">
         <tr>
-            <th scope="col">Seed</th>
+            <th id="hide" scope="col">Seed</th>
             <th scope="col">Jugador</th>
             <th scope="col">Elo</th>
         </tr>
     </thead>
     `;
+
+    let hide = document.getElementById("hide");
+    hide.addEventListener("dblclick", () => toggleAdminLogin())
     let body = document.createElement("tbody");
     // console.log(players);
     let inv = document.getElementById("inv");
     let acc = [];
+    console.log(players);
     players.forEach((player) => {
-        acc.push(player.prevData.seed);
+        acc.push(player.semilla);
         let tr = document.createElement("tr");
-        tr.classList.add("seed"+player.prevData.seed);
+        tr.classList.add("seed"+player.semilla);
         tr.classList.add("player");
         tr.classList.add("asd");
 
         let seed = document.createElement("th");
         seed.setAttribute("scope", "row")
-        seed.innerHTML = player.prevData.seed;
+        seed.innerHTML = player.semilla;
         tr.appendChild(seed);
 
         let td = document.createElement("td");
@@ -73,7 +77,7 @@ async function loadLeftBar(players) {
         tr.appendChild(td);
 
         let eloTd = document.createElement("td");
-        eloTd.innerHTML = player.prevData.elo;
+        eloTd.innerHTML = player.elo;
         tr.appendChild(eloTd);
 
         body.appendChild(tr);
@@ -99,11 +103,11 @@ function loadSeedingGroups(players, tier){
         let tbody = document.createElement('tbody');
         group.forEach((p,i) => {
             let tr = document.createElement('tr');
-            tr.classList.add("seed"+p.prevData.seed);
+            tr.classList.add("seed"+p.semilla);
             tr.classList.add("player");
             tr.classList.add("asd");
             tr.classList.add("seeding-tr");
-            if (p.group != null) {
+            if (p.grupoId != null) {
                 tr.classList.add("table-info")
             } else {
                 tr.classList.remove("table-info")
@@ -111,70 +115,71 @@ function loadSeedingGroups(players, tier){
 
             let seed = document.createElement("th");
             seed.setAttribute("scope", "row")
-            seed.innerHTML = p.prevData.seed;
+            seed.innerHTML = p.semilla;
             tr.appendChild(seed);
 
             let td = document.createElement("td");
             td.innerHTML = p.nick;
             tr.appendChild(td);
 
-            let aTd = document.createElement("td");
-            let a = document.createElement("a");
-            a.classList.add("btn");
-            a.classList.add("btn-success");
-            a.setAttribute("href","#");
-            a.setAttribute("role","button");
-            a.innerHTML = `<i class="fas fa-pen"></i>`
-
-            a.addEventListener("click", ()=>{
-                Swal.fire({
-                    title: `Introduce el nuevo grupo para ${p.nick}`,
-                    input: 'text',
-                    allowOutsideClick: false,
-                    inputAttributes: {
-                      autocapitalize: 'off'
-                    },
-                    showCancelButton: true,
-                    cancelButtonText: "Cancelar",
-                    confirmButtonText: 'Aceptar',
-                    showLoaderOnConfirm: true,
-                    preConfirm: async (info) => {
-                        console.log(info);
-                        let fetching = await fetch(`/api/groups/`,{
-                            method: 'POST',
-                            headers: {
-                                "Content-Type": "application/json",
-                            },
-                            body: JSON.stringify({
-                                id: p.id,
-                                group: info
+            if (verifyAdmin()) {
+                let aTd = document.createElement("td");
+                let a = document.createElement("a");
+                a.classList.add("btn");
+                a.classList.add("btn-success");
+                a.setAttribute("href","#");
+                a.setAttribute("role","button");
+                a.innerHTML = `<i class="fas fa-pen"></i>`
+                a.addEventListener("click", ()=>{
+                    Swal.fire({
+                        title: `Introduce el nuevo grupo para ${p.nick}`,
+                        input: 'text',
+                        allowOutsideClick: false,
+                        inputAttributes: {
+                          autocapitalize: 'off'
+                        },
+                        showCancelButton: true,
+                        cancelButtonText: "Cancelar",
+                        confirmButtonText: 'Aceptar',
+                        showLoaderOnConfirm: true,
+                        preConfirm: async (info) => {
+                            console.log(info);
+                            let fetching = await fetch(`/api/groups/`,{
+                                method: 'POST',
+                                headers: {
+                                    "Content-Type": "application/json",
+                                },
+                                body: JSON.stringify({
+                                    id: p.id,
+                                    group: info
+                                })
                             })
-                        })
-                        fetching = await fetching.json();
-
-                        if (fetching.status == 200) {
-                            Swal.fire({
-                                title: `${p.nick} ahora es parte del grupo ${info}`,
-                                confirmButtonText: 'Ok',
-                            })
-                            await updateGroups(tier)
-                        } else if (fetching.status == 400) {
-                            Swal.fire({
-                                title: `El valor ingresado (${info}) no parece ser válido`,
-                                confirmButtonText: 'Ok'
-                            })
-                        } else {
-                            Swal.fire({
-                                title: `El grupo ${info} está lleno, remueve algún integrante para seguir agregando`,
-                                confirmButtonText: 'Ok'
-                            })
-                        }
-                    },
+                            fetching = await fetching.json();
+    
+                            if (fetching.status == 200) {
+                                Swal.fire({
+                                    title: `${p.nick} ahora es parte del grupo ${info}`,
+                                    confirmButtonText: 'Ok',
+                                })
+                                await updateGroups(tier)
+                            } else if (fetching.status == 400) {
+                                Swal.fire({
+                                    title: `El valor ingresado (${info}) no parece ser válido`,
+                                    confirmButtonText: 'Ok'
+                                })
+                            } else {
+                                Swal.fire({
+                                    title: `El grupo ${info} está lleno, remueve algún integrante para seguir agregando`,
+                                    confirmButtonText: 'Ok'
+                                })
+                            }
+                        },
+                    })
                 })
-            })
+                aTd.appendChild(a);
+                tr.appendChild(aTd);
+            }
 
-            aTd.appendChild(a);
-            tr.appendChild(aTd);
 
             tbody.appendChild(tr);
         })
@@ -213,33 +218,35 @@ async function loadGroups(tier){
             let tbody = document.createElement('tbody');
             group.forEach((p,i) => {
                 let tr = document.createElement('tr');
-                tr.classList.add("seed"+p.prevData.seed);
+                tr.classList.add("seed"+p.semilla);
                 tr.classList.add("player");
                 tr.classList.add("asd");
 
-                tr.addEventListener("dblclick", () => {
-                    Swal.fire({
-                        title: `Quieres remover a ${p.nick} del grupo ${p.group}`,
-                        showCancelButton: true,
-                        confirmButtonText: 'Confirmar',
-                        cancelButtonText: `Volver`,
-                      }).then(async (result) => {
-                        /* Read more about isConfirmed, isDenied below */
-                        if (result.isConfirmed) {
-                            await fetch(`/api/groups/`,{
-                                method: 'DELETE',
-                                headers: {
-                                    "Content-Type": "application/json",
-                                },
-                                body: JSON.stringify({
-                                    id: p.id
+                if (verifyAdmin()) {
+                    tr.addEventListener("dblclick", () => {
+                        Swal.fire({
+                            title: `Quieres remover a ${p.nick} del grupo ${p.grupoId}`,
+                            showCancelButton: true,
+                            confirmButtonText: 'Confirmar',
+                            cancelButtonText: `Volver`,
+                          }).then(async (result) => {
+                            /* Read more about isConfirmed, isDenied below */
+                            if (result.isConfirmed) {
+                                await fetch(`/api/groups/`,{
+                                    method: 'DELETE',
+                                    headers: {
+                                        "Content-Type": "application/json",
+                                    },
+                                    body: JSON.stringify({
+                                        id: p.id
+                                    })
                                 })
-                            })
-                            Swal.fire(`${p.nick} ahora está sin grupo`, '', 'success')
-                            await updateGroups(tier);
-                        }
-                      })
-                })
+                                Swal.fire(`${p.nick} ahora está sin grupo`, '', 'success')
+                                await updateGroups(tier);
+                            }
+                          })
+                    })
+                }
     
                 let td = document.createElement("td");
                 td.innerHTML = p.nick;
@@ -310,18 +317,22 @@ async function setPage() {
     let params = new URLSearchParams(document.location.search);
     let p = params.get("p") || "seeding"
     if (p == "seeding") {
+        loading();
         await loadSeedingPage().then(()=>{
             addSeedingStyles();
         })
     } else if (p == "groups") {
+        loading();
         await loadGroupsPage().then(()=>{
             addGroupsStyles();
         })
     } else if (p == "final") {
+        loading();
         await loadFinalPage().then(()=>{
             addFinalStyles();
         })
     } else {
+        loading();
         insertParam('p', "seeding");
         await loadSeedingPage().then(()=>{
             addSeedingStyles();
