@@ -7,7 +7,7 @@ let db = require("../database/models");
 const e = require('express');
 
 let fileMatchesPath = path.resolve(__dirname, '../data/matches.json')
-let matchesData = JSON.parse(fs.readFileSync(fileMatchesPath, 'utf8')); 
+// let matchesData = JSON.parse(fs.readFileSync(fileMatchesPath, 'utf8')); 
 
 function save(d,path) {
     fs.writeFileSync(path, JSON.stringify(d,null,2));

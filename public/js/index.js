@@ -316,30 +316,30 @@ tierSelector.addEventListener("change", (e)=>{
 async function setPage() {
     let params = new URLSearchParams(document.location.search);
     let p = params.get("p") || "seeding"
+    loading();
     if (p == "seeding") {
-        loading();
         await loadSeedingPage().then(()=>{
             addSeedingStyles();
         })
     } else if (p == "groups") {
-        loading();
+        // loading();
         await loadGroupsPage().then(()=>{
             addGroupsStyles();
         })
     } else if (p == "final") {
-        loading();
+        // loading();
         await loadFinalPage().then(()=>{
             addFinalStyles();
         })
     } else {
-        loading();
+        // loading();
         insertParam('p', "seeding");
         await loadSeedingPage().then(()=>{
             addSeedingStyles();
         })
     }
 }
-
+loading();
 setPage();
 
 document.getElementById("sort").addEventListener("click", ()=>{
