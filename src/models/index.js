@@ -249,11 +249,87 @@ const model = {
         } catch (error) {
             console.log(error);
         }
+    },
+    selectWinners: async (tier) => {
+        let data2 = await db.Grupo.findAll({include: {association: "jugadores", where: {categoriaId: tier} ,include: ["partidasUno","partidasDos","categoria","grupo"]}})
+        // let data = await db.Jugador.findAll({include: ["partidasUno","partidasDos","categoria","grupo"]})
+        // console.log(data);
+        // let acc1 = []
+        data2 = data2.map((g,i) => {
+            // g.jugadores.forEach(player => {
+            //     player.partidas = [...player.partidasUno, ...player.partidasDos]
+            // })
+            let acc2 = [];
+            g.jugadores.forEach((p,i) => {
+                delete p.dataValues.partidasUno;
+                delete p.dataValues.partidasDos;
+                delete p.dataValues.categoriaId;
+                delete p.dataValues.grupoId;
+                // console.log(p);
+                let newObj = {
+                    id: p.id,
+                    nick: p.nick,
+                    elo: p.elo,
+                    puntos: 0,
+                    semilla: p.semilla,
+                    categoria: p.categoria.dataValues,
+                    grupo: p.grupo.dataValues,
+                    // ...p.dataValues,
+                    partidas: [...p.partidasUno, ...p.partidasDos]
+                }
+                let accP = newObj.partidas.reduce((acc, value)=> {
+                    // console.log(`${p.nick} jugó contra ${p.id != value.jugadorDosId ? value.jugadorDosId : value.jugadorUnoId}, el ganador fue el jugador ${value.ganador}`);
+                    if((value.ganador == 0 && value.jugadorUnoId == p.id) || (value.ganador == 1 && value.jugadorDosId == p.id)){
+                        // console.log(`${p.nick} jugó contra ${p.id != value.jugadorDosId ? value.jugadorDosId : value.jugadorUnoId} y ganó`);
+                        return acc + 2
+                    } else if ((value.ganador == 1 && value.jugadorUnoId == p.id) || (value.ganador == 0 && value.jugadorDosId == p.id)) {
+                        // console.log(`${p.nick} jugó contra ${p.id != value.jugadorDosId ? value.jugadorDosId : value.jugadorUnoId} y perdió`);
+                        return acc - 1
+                    }
+                    return acc;
+                },newObj.puntos)
+                // console.log(accP);
+                newObj.puntos = accP;
+                acc2.push(newObj);
+            })
+            acc2.sort((a,b) => b.puntos - a.puntos);
+            return acc2
+        })
+        let orden = {
+            primeros: data2.map(g => {
+                // console.log(g);
+                if (g.find(p => p.puntos == 4)) {
+                    return g.find(p => p.puntos == 4);
+                } else {
+                    // console.log(`${g[0].nick} tiene ${g[0].puntos} y está clasificado como primero`);
+                    return null;
+                }
+            }),
+            segundos: data2.map(g => {
+                if (g.find(p => p.puntos == 3)) {
+                    return g.find(p => p.puntos == 3);
+                } else {
+                    // console.log(`${g[1].nick} tiene ${g[1].puntos} y está clasificado como segundo`);
+                    return null;
+                }
+            })
+        }
+        console.log(orden);
+        return data2
+    },
+    updateNick: async function (id, nick){
+        try {
+            await db.Jugador.update({nick: nick},{where: {id: id}})
+            return true;
+        } catch (error) {
+            console.log(error);
+            return false;
+        }
     }
 }
 
 // model.setWinner(1,1,0);
-model.createGroupMatches(1)
+// model.createGroupMatches(1)
 // model.createGroupMatches(2)
 // model.createGroupMatches(3)
 

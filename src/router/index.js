@@ -16,7 +16,11 @@ app.get("/api/group-phase/:tier", controller.apiShowGroups);
 
 app.post("/api/group-phase/:tier", controller.apiSetWinner);
 
+app.get("/api/group-phase-winners/:tier", controller.apiSendWinners);
+
 app.put("/api/group-phase/:tier", controller.apiUpdateMatchInfo);
+
+app.put("/api/players/update", controller.apiUpdateNick);
 
 app.use((req,res,next) => {
     return res.redirect("/");

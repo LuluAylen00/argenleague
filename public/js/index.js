@@ -41,6 +41,10 @@ function addSeedingStyles() {
     })
 }
 
+function toggleUpdateNick(id,nick) {
+    let form = document.createElement("form");
+}
+
 async function loadLeftBar(players) {
     let leftTable = document.getElementById("seed-table");
     leftTable.innerHTML = `
@@ -74,6 +78,25 @@ async function loadLeftBar(players) {
 
         let td = document.createElement("td");
         td.innerHTML = player.nick;
+        td.addEventListener("dblclick", () => {
+            td.innerHTML = `
+                <div id="update-div">
+                    <input type="hidden" id="update-id" name="nick" value="${player.id}"/>
+                    <input type="text" id="update-nick" name="nick" autocomplete="off" value="${player.nick}"/>
+                    <i class="fas fa-times-circle"></i>
+                    <i class="fas fa-check-square"></i>
+                </div>
+            `
+            
+            td.querySelector("i.fa-check-square").addEventListener("click", async function(){
+                await updateNick(player.id,td.querySelector("#update-nick").value);
+                td.innerHTML = td.querySelector("#update-nick").value;
+            })
+
+            td.querySelector("i.fa-times-circle").addEventListener("click", async function(){
+                td.innerHTML = player.nick;
+            })
+        })
         tr.appendChild(td);
 
         let eloTd = document.createElement("td");
@@ -305,6 +328,29 @@ async function updateGroups(){
     loadLeftBar(playerList);
     loadSeedingGroups(playerList,t);
     addSeedingStyles();
+}
+
+async function updateNick(id, nick){
+    let fetching = await fetch(`/api/players/update`,{
+        method: 'PUT',
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+            id: id,
+            nick: nick
+        })
+    })
+    fetching = await fetching.json();
+    console.log(fetching);
+    await setPage();
+    // if (fetching) {
+    //     // Swal.fire(`${match.jugadorUno.nick} ha ganado!`, '', 'success')
+    // }
+    // await loadGroups(t);
+    // loadLeftBar(playerList);
+    // loadSeedingGroups(playerList,t);
+    // addSeedingStyles();
 }
 
 tierSelector.addEventListener("change", (e)=>{

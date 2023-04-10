@@ -46,6 +46,12 @@ const controller = {
         return res.send({
             status: 200
         })
+    },
+    apiSendWinners: async function (req, res) {
+        res.send(await model.selectWinners(req.params.tier));
+    },
+    apiUpdateNick: async function (req, res) {
+        res.send(await model.updateNick(req.body.id,req.body.nick));
     }
 }
 

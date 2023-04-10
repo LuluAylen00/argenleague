@@ -257,3 +257,21 @@ div.bot-part caption {
     transform: scale(0);
   }
 }
+
+#update-div {
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+#update-div input {
+  width: 80%;
+}
+
+#update-div i.fa-times-circle {
+  color: red;
+}
+
+#update-div i.fa-check-square {
+  color: green;
+}
