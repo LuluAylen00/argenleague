@@ -78,25 +78,27 @@ async function loadLeftBar(players) {
 
         let td = document.createElement("td");
         td.innerHTML = player.nick;
-        td.addEventListener("dblclick", () => {
-            td.innerHTML = `
-                <div id="update-div">
-                    <input type="hidden" id="update-id" name="nick" value="${player.id}"/>
-                    <input type="text" id="update-nick" name="nick" autocomplete="off" value="${player.nick}"/>
-                    <i class="fas fa-times-circle"></i>
-                    <i class="fas fa-check-square"></i>
-                </div>
-            `
-            
-            td.querySelector("i.fa-check-square").addEventListener("click", async function(){
-                await updateNick(player.id,td.querySelector("#update-nick").value);
-                td.innerHTML = td.querySelector("#update-nick").value;
-            })
+        if (verifyAdmin()) {
+            td.addEventListener("dblclick", () => {
+                td.innerHTML = `
+                    <div id="update-div">
+                        <input type="hidden" id="update-id" name="nick" value="${player.id}"/>
+                        <input type="text" id="update-nick" name="nick" autocomplete="off" value="${player.nick}"/>
+                        <i class="fas fa-times-circle"></i>
+                        <i class="fas fa-check-square"></i>
+                    </div>
+                `
+                
+                td.querySelector("i.fa-check-square").addEventListener("click", async function(){
+                    await updateNick(player.id,td.querySelector("#update-nick").value);
+                    td.innerHTML = td.querySelector("#update-nick").value;
+                })
 
-            td.querySelector("i.fa-times-circle").addEventListener("click", async function(){
-                td.innerHTML = player.nick;
+                td.querySelector("i.fa-times-circle").addEventListener("click", async function(){
+                    td.innerHTML = player.nick;
+                })
             })
-        })
+        }
         tr.appendChild(td);
 
         let eloTd = document.createElement("td");
