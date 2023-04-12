@@ -275,3 +275,18 @@ div.bot-part caption {
 #update-div i.fa-check-square {
   color: green;
 }
+
+div#loader {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+svg {
+  width: 40%;
+}
+
+#cube {
+  transform-origin: 50% 50%;
+}
