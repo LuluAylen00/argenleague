@@ -91,7 +91,7 @@ const model = {
                 await db.Partida.update({jugadorUnoId: winner != null ? players.find((p,i) => i != winner) : null},{where: {id: matchId+2}});
                 break;
             case 4:
-                await db.Partida.update({jugadorUnoId: winner != null ? players.find((p,i) => i != winner) : null},{where: {id: matchId+1}});
+                await db.Partida.update({jugadorUnoId: winner != null ? players.find((p,i) => i == winner) : null},{where: {id: matchId+1}});
                 break;
             default:
                 break;
