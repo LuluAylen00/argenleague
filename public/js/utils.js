@@ -126,15 +126,15 @@ function calcPoints(nick,fecha){
         // console.log(match.winner == 0);
         // console.log((match.jugadorDos && match.jugadorDos.nick == nick));
         // console.log(match.winner == 1);
-        console.log(nick, match.jugadorUno ? match.jugadorUno.nick : "Nadie", match.jugadorDos ? match.jugadorDos.nick : "Nadie");
+        // console.log(nick, match.jugadorUno ? match.jugadorUno.nick : "Nadie", match.jugadorDos ? match.jugadorDos.nick : "Nadie");
         if ((match.jugadorUno && match.jugadorUno.nick == nick) && match.ganador == 0) {
-            console.log(nick + " ganó en la fecha "+ match.fechaId + " a "+match.jugadorDos.nick);
+            // console.log(nick + " ganó en la fecha "+ match.fechaId + " a "+match.jugadorDos.nick);
         } else if ((match.jugadorDos && match.jugadorDos.nick == nick) && match.ganador == 1) {
-            console.log(nick + " ganó en la fecha "+ match.fechaId + " a "+match.jugadorUno.nick);
+            // console.log(nick + " ganó en la fecha "+ match.fechaId + " a "+match.jugadorUno.nick);
         } else if ((match.jugadorUno && match.jugadorUno.nick == nick) && match.ganador == 1) {
-            console.log(nick + " perdió en la fecha "+ match.fechaId + " contra "+match.jugadorDos.nick);
+            // console.log(nick + " perdió en la fecha "+ match.fechaId + " contra "+match.jugadorDos.nick);
         } else if ((match.jugadorDos && match.jugadorDos.nick == nick) && match.ganador == 1) {
-            console.log(nick + " perdió en la fecha "+ match.fechaId + " contra "+match.jugadorUno.nick);
+            // console.log(nick + " perdió en la fecha "+ match.fechaId + " contra "+match.jugadorUno.nick);
         }
 
         if ((match.jugadorUno && match.jugadorUno.nick == nick) && match.ganador == 0 || (match.jugadorDos && match.jugadorDos.nick == nick) && match.ganador == 1) {
@@ -176,6 +176,34 @@ function setCookie(cname, cvalue, exdays) {
     document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
   }
 
+function deduce(slot, cat) {
+    // switch (cat) {
+    //     case 1:
+            
+    //         break;
+    
+    //     default:
+    //         break;
+    // }
+    // console.log(slot, cat);
+    // let slot = parseInt(slot)
+    switch (parseInt(slot)) {
+        case 1:
+        case 8:
+            return 1 + ((parseInt(cat)-1) *8);
+        case 2:
+        case 7:
+            return 2 + ((parseInt(cat)-1) *8);
+        case 3:
+        case 6:
+            return 3 + ((parseInt(cat)-1) *8);
+        case 4:
+        case 5:
+            return 4 + ((parseInt(cat)-1) *8);
+        default:
+            return null;
+    }
+}
 
 function setAdmin(pass) {
     setCookie("user", pass, 365);
@@ -233,7 +261,7 @@ function setAWinner(match, tier, group,round) {
                     })
                 })
                 fetching = await fetching.json();
-                console.log(fetching);
+                // console.log(fetching);
                 if (fetching.status == 200) {
                     // Swal.fire(`${match.jugadorUno.nick} ha ganado!`, '', 'success')
                     await setPage();

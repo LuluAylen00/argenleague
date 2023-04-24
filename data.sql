@@ -58,3 +58,17 @@ CREATE TABLE `partidas` (
 INSERT INTO partidas (jugadorUnoId, jugadorDosId, fechaId, horario, draft, categoriaId, grupoId) VALUES (4,9,1, null, null,1,1),(8,15,1, null, null,1,1),(null,8,2, null, null,1,1),(null,15,2, null, null,1,1),(null,null,3, null, null,1,1),(2,11,1, null, null,1,2),(7,14,1, null, null,1,2),(null,null,2, null, null,1,2),(null,null,2, null, null,1,2),(null,null,3, null, null,1,2),(3,12,1, null, null,1,3),(5,13,1, null, null,1,3),(null,null,2, null, null,1,3),(null,null,2, null, null,1,3),(null,null,3, null, null,1,3),(1,10,1, null, null,1,4),(6,16,1, null, null,1,4),(null,null,2, null, null,1,4),(null,null,2, null, null,1,4),(null,null,3, null, null,1,4);
 INSERT INTO partidas (jugadorUnoId, jugadorDosId, fechaId, horario, draft, categoriaId, grupoId) VALUES (17,27,1, null, null,2,1),(22,31,1, null, null,2,1),(null,null,2, null, null,2,1),(null,null,2, null, null,2,1),(null,null,3, null, null,2,1),(18,25,1, null, null,2,2),(24,29,1, null, null,2,2),(null,29,2, null, null,2,2),(null,24,2, null, null,2,2),(null,null,3, null, null,2,2),(20,26,1, null, null,2,3),(21,32,1, null, null,2,3),(null,null,2, null, null,2,3),(null,null,2, null, null,2,3),(null,null,3, null, null,2,3),(19,28,1, null, null,2,4),(23,30,1, null, null,2,4),(null,null,2, null, null,2,4),(null,null,2, null, null,2,4),(null,null,3, null, null,2,4);
 INSERT INTO partidas (jugadorUnoId, jugadorDosId, fechaId, horario, draft, categoriaId, grupoId) VALUES (34,42,1, null, null,3,1),(39,48,1, null, null,3,1),(null,null,2, null, null,3,1),(null,null,2, null, null,3,1),(null,null,3, null, null,3,1),(36,44,1, null, null,3,2),(40,47,1, null, null,3,2),(null,null,2, null, null,3,2),(null,null,2, null, null,3,2),(null,null,3, null, null,3,2),(35,41,1, null, null,3,3),(38,45,1, null, null,3,3),(null,null,2, null, null,3,3),(null,null,2, null, null,3,3),(null,null,3, null, null,3,3),(33,43,1, null, null,3,4),(37,46,1, null, null,3,4),(null,null,2, null, null,3,4),(null,null,2, null, null,3,4),(null,null,3, null, null,3,4);
+
+DROP TABLE IF EXISTS `partidasFinales`;
+CREATE TABLE `partidasFinales` (
+    `id` INT PRIMARY KEY AUTO_INCREMENT,
+    `jugadorUnoId` INT DEFAULT NULL,
+    `jugadorDosId` INT DEFAULT NULL,
+    `etapaId` INT NOT NULL,
+    `categoriaId` INT NOT NULL,
+    `ganador` TINYINT(1) DEFAULT NULL,
+    FOREIGN KEY (`categoriaId`) REFERENCES `categorias` (`id`),
+    FOREIGN KEY (`jugadorUnoId`) REFERENCES `jugadores` (`id`),
+    FOREIGN KEY (`jugadorDosId`) REFERENCES `jugadores` (`id`)
+);
+INSERT INTO partidasFinales (etapaId,categoriaId) VALUES (1,1),(1,1),(1,1),(1,1),(2,1),(2,1),(3,1),(4,1),(1,2),(1,2),(1,2),(1,2),(2,2),(2,2),(3,2),(4,2),(1,3),(1,3),(1,3),(1,3),(2,3),(2,3),(3,3),(4,3);

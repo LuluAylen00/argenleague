@@ -22,6 +22,10 @@ app.put("/api/group-phase/:tier", controller.apiUpdateMatchInfo);
 
 app.put("/api/players/update", controller.apiUpdateNick);
 
+app.get('/api/final/:tier', controller.displayFinalPhase);
+
+app.patch('/api/final/set/player', controller.setFinalMatchPlayer);
+
 app.use((req,res,next) => {
     return res.redirect("/");
 })

@@ -1,6 +1,7 @@
 const model = require('../models/index');
 const fs = require("fs");
 const path = require("path");
+const db = require("../database/models")
 
 const controller = {
     home: (req,res) => {
@@ -52,6 +53,36 @@ const controller = {
     },
     apiUpdateNick: async function (req, res) {
         res.send(await model.updateNick(req.body.id,req.body.nick));
+    },
+    displayFinalPhase: async function (req, res) {
+        let info = await db.Final.findAll({where: {categoriaId: req.params.tier}})
+        res.send(info)
+    },
+    setFinalMatchPlayer: async function (req, res) {
+        let playerType = req.body.playerType;
+        let info
+        info = await db.Final.update({
+            jugadorUnoId: null
+        },{where: {jugadorUnoId: req.body.playerId}})
+        info += await db.Final.update({
+            jugadorDosId: null
+        },{where: {jugadorDosId: req.body.playerId}})
+
+        if (req.body.matchId != null) {
+            info = await db.Final.update({
+                [playerType]: req.body.playerId
+            },{where: {id: req.body.matchId}})
+        }
+
+        // if (info[0] > 0) {
+            return res.send({
+                status: 200
+            })
+        // } /* else {
+            // return res.send({
+            //     status: 403
+            // })
+        // } */
     }
 }
 
