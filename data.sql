@@ -63,7 +63,7 @@ DROP TABLE IF EXISTS `partidasFinales`;
 CREATE TABLE `partidasFinales` (
     `id` INT PRIMARY KEY AUTO_INCREMENT,
     `jugadorUnoId` INT DEFAULT NULL,
-    `jugadorDosId` INT DEFAULT NULL, 
+    `jugadorDosId` INT DEFAULT NULL,
     `etapaId` INT NOT NULL,
     `categoriaId` INT NOT NULL,
     `ganador` TINYINT(1) DEFAULT NULL,
